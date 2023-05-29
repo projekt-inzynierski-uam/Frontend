@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Paper, Button } from '@mantine/core';
 import axios from 'axios';
+import './LoggedPage.css';
 
 interface User {
   id: number;
@@ -36,8 +37,8 @@ const LoggedPage: React.FC<LoggedPageProps> = ({ login, onLogout }) => {
   }, [login]);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Paper shadow="sm" style={{ maxWidth: 400, width: '100%' }}>
+    <div className='logged-page'>
+      <Paper shadow="sm" className='user-info'>
         {userData ? (
           <div>
             <h2>Welcome, {login}!</h2>

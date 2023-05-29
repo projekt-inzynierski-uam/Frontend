@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: hsla(285, 81%, 51%, 1);
+    background: radial-gradient(circle, hsla(285, 81%, 51%, 1) 5%, hsla(242, 59%, 83%, 1) 86%);
+    background: -moz-radial-gradient(circle, hsla(285, 81%, 51%, 1) 5%, hsla(242, 59%, 83%, 1) 86%);
+    background: -webkit-radial-gradient(circle, hsla(285, 81%, 51%, 1) 5%, hsla(242, 59%, 83%, 1) 86%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B61EE8", endColorstr="#BBB9ED", GradientType=1 );
+}

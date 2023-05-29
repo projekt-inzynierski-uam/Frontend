@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginPage from './LoginPage';
 import LoggedPage from './LoggedPage';
+import './App.css';
 
 const App: React.FC = () => {
   const [loggedInUser, setLoggedInUser] = useState<string | null>(null);
@@ -14,7 +15,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='main-content'>
       {loggedInUser ? (
         <LoggedPage login={loggedInUser} onLogout={handleLogout} />
       ) : (

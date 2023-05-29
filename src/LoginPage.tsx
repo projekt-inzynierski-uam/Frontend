@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, Button, Paper } from '@mantine/core';
 import axios from 'axios';
+import './LoginPage.css';
 
 interface LoginForm {
   login: string;
@@ -42,8 +43,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Paper shadow="sm" style={{ maxWidth: 400, width: '100%' }}>
+    <div className='login-page'>
+      <Paper shadow="sm" className='login-form'>
         <form onSubmit={handleSubmit}>
           <TextInput
             label="Login"
