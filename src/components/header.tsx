@@ -121,7 +121,7 @@ import {
       description: 'Combusken battles with the intensely hot flames it spews',
     },
   ];
-  
+
   export function HeaderMegaMenu() {
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
@@ -247,8 +247,8 @@ import {
             <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
   
             <Group position="center" grow pb="xl" px="md">
-              <Button variant="default">Log in</Button>
-              <Button>Sign up</Button>
+                    <Button variant="default">Log in</Button>
+                <Button>Sign up</Button>
             </Group>
           </ScrollArea>
         </Drawer>

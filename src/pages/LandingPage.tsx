@@ -1,5 +1,3 @@
-import React from 'react';
-import { Group, Button } from '@mantine/core';
 import { HeaderMegaMenu } from '../components/header.tsx';
 
 const LandingPage = () => {
