@@ -22,7 +22,7 @@ const Auth = () => {
         return
       }
 
-      const response = await fetch(`https://backend-d84p.onrender.com/${endpoint}`,{
+      const response = await fetch(`https://projekt-backend.onrender.com/${endpoint}`,{
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({email, password}),
