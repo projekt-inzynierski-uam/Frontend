@@ -22,10 +22,10 @@ const Auth = () => {
         return
       }
 
-      const response = await fetch(`http://localhost:8000/${endpoint}`,{
+      const response = await fetch(`https://projekt-backend.onrender.com/${endpoint}`,{
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({email, password})
+        body: JSON.stringify({email, password}),
       })
 
       const data = await response.json()
@@ -36,7 +36,7 @@ const Auth = () => {
         setCookie('Email', data.email)
         setCookie('AuthToken', data.token)
 
-        windows.location.reload()
+        window.location.reload()
       }
     }
 

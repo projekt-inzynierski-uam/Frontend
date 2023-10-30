@@ -1,0 +1,38 @@
+.sidebar {
+  width: 13%;
+  background-color: #E85A4F;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  
+}
+
+.sidebar-content {
+  flex-grow: 1;
+  overflow-y: auto; 
+}
+
+.menu-text {
+  text-align: center; /* Center horizontally */
+  align-self: center; /* Center vertically */
+  padding: 10px 0; /* Add padding as needed */
+  padding-top: 60px; 
+}
+
+.bar {
+  width: 60%; /* 60% of sidebar width */
+  height: 2px; /* 2 pixels height */
+  background-color: rgb(202, 70, 59); /* Slightly lighter than (232, 90, 79) */
+  align-self: center; /* Center vertically */
+  margin: 10px auto; /* Add spacing as needed */
+}
+
+.settings-bar{
+  text-align: center;
+}
+
+.settings-bar:hover {
+  background-color: rgb(220, 80, 70);
+}
