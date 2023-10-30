@@ -1,13 +1,11 @@
 .sidebar {
-  width: 250px;
-  background-color: rgb(232, 90, 79);
+  width: 13%;
+  background-color: #E85A4F;
   color: #fff;
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   
 }
 
@@ -29,4 +27,12 @@
   background-color: rgb(202, 70, 59); /* Slightly lighter than (232, 90, 79) */
   align-self: center; /* Center vertically */
   margin: 10px auto; /* Add spacing as needed */
+}
+
+.settings-bar{
+  text-align: center;
+}
+
+.settings-bar:hover {
+  background-color: rgb(220, 80, 70);
 }

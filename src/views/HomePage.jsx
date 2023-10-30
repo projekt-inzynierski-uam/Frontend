@@ -1,4 +1,4 @@
-import './HomePage.css'
+import '../HomePage.css'
 import {Link}  from "react-router-dom"
 
 const HomePage = () => {
@@ -71,7 +71,7 @@ const HomePage = () => {
          </div>
          <div className="e1_3">
             <div className="e1_15">
-               <Link to={"/app"}><span  className="e1_16">Konto</span>
+               <Link to={"/dashboard"}><span  className="e1_16">Konto</span>
                <div className="e1_17">
                   <div  className="e1_31"></div>
                </div>
