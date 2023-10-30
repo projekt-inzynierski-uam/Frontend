@@ -36,7 +36,7 @@ const Auth = () => {
         setCookie('Email', data.email)
         setCookie('AuthToken', data.token)
 
-        windows.location.reload()
+        window.location.reload()
       }
     }
 
