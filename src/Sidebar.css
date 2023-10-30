@@ -10,8 +10,8 @@
 }
 
 .sidebar-content {
-  flex-grow: 1;
-  overflow-y: auto; 
+  overflow-y: auto;
+  height: 95%; 
 }
 
 .menu-text {
