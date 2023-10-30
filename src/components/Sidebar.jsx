@@ -1,7 +1,6 @@
 import RedirectButton from './RedirectButton';
 import AppTitle from './AppTitle';
 import '../Sidebar.css';
-import 'font-awesome/css/font-awesome.min.css'; 
 import SettingsIcon from '../assets/settingsicon.png'
 import {Link} from 'react-router-dom'
 
