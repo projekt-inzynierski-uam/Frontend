@@ -1,4 +1,4 @@
-import '../Header.css';
+import '../styles/Header.css';
 import {useCookies} from 'react-cookie';
 //import {useState} from 'react';
 

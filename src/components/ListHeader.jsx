@@ -1,6 +1,5 @@
 import Modal from './Modal'
 import { useState } from 'react'
-import {useCookies} from 'react-cookie'
 
 const ListHeader = ({ listName, getData}) => {
 
