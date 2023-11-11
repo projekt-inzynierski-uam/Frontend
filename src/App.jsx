@@ -3,7 +3,7 @@ import ListItem from './components/ListItem'
 import ListHeader from './components/ListHeader'
 import Auth from './components/Auth'
 import {useCookies} from 'react-cookie'
-import './index.css'
+import './styles/index.css'
 
 function App() {
 
