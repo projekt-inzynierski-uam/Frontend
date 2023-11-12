@@ -14,6 +14,7 @@ const Sidebar = () => {
             <div className="bar"></div>
             <RedirectButton to={"/dashboard/kalendarz"} text={"Kalendarz"}/>
             <RedirectButton to={"/dashboard/zadania"} text={"Zadania"}/>
+            <RedirectButton to={"/dashboard/grupy"} text={"Grupy"}/>
             <div className="bar"></div>
         </div>
         <Link to={"/dashboard/ustawienia"}>
