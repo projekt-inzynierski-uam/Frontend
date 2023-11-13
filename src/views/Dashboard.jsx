@@ -1,10 +1,10 @@
 import Sidebar from '../components/Sidebar'
-import '../Dashboard.css'
+import '../styles/Dashboard.css'
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import Auth from '../components/Auth';
 import {useCookies} from 'react-cookie'
-import '../index.css'
+import '../styles/index.css'
 
 const Dashboard = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null)

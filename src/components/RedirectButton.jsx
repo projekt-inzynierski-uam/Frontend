@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../RedirectButton.css';
+import '../styles/RedirectButton.css';
 
 const RedirectButton = ({to, text}) => {
   return (

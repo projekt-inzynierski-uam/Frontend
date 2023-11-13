@@ -8,11 +8,12 @@ const Settings = () => {
     const signOut = () => {
         removeCookie('Email')
         removeCookie('AuthToken')
+        window.location.reload()
     }
 
     return (
         <>
-            <Link to={"/dashboard"}><p><button className="signout" onClick={signOut}>WYLOGUJ SIĘ</button></p></Link>
+            <Link to={"/dashboard"}><button className="signout" onClick={signOut}>WYLOGUJ SIĘ</button></Link>
         </>
     )
 }
