@@ -5,7 +5,7 @@ import Tasks from './components/Tasks'
 import Calendar from './components/Calendar'
 import Settings from './components/Settings'
 import Groups from './components/Groups'
-
+import GroupTasks from './components/GroupTasks'
 
 const router = createBrowserRouter([
     {
@@ -26,7 +26,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/dashboard/grupy",
-                element: <Groups/>
+                element: <Groups/>,
+            },
+            {
+                path: "/dashboard/grupy/:idGrupy",
+                element: <GroupTasks/>
             },
             {
                 path: "/dashboard/ustawienia",

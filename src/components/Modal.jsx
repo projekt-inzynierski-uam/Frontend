@@ -2,13 +2,13 @@ import { useState } from "react"
 import { useCookies } from 'react-cookie'
 import { DateInput } from '@mantine/dates';
 
-const Modal = ({mode, setShowModal, getData, task}) => {
+const Modal = ({mode, setShowModal, getData, task, assignedTo}) => {
     const editMode = mode === "edit" ? true : false
     const [cookies, setCookie, removeCookie] = useCookies(null)
     const [date, setDate] = useState(null);
 
     const [data, setData] = useState({
-      user_email: editMode ? task.user_email : cookies.Email,
+      assigned: editMode ? task.assigned : assignedTo,
       title: editMode ? task.title : null,
     })
 
