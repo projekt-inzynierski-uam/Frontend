@@ -1,4 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom'
+import ProtectedRoute from './components/ProtectedRoute' //TODO
 import HomePage from './views/HomePage'
 import Dashboard from './views/Dashboard'
 import Tasks from './components/Tasks'
