@@ -1,17 +1,15 @@
 import ListItem from "./ListItem"
 import ListHeader from "./ListHeader"
 import { useState, useEffect } from 'react'
-import {useCookies} from 'react-cookie'
+import { useLocation } from "react-router-dom"
 
-const Tasks = () => {
-
-    const [cookies] = useCookies(null)
+const GroupTasks = () => {
     const [tasks, setTasks] = useState(null)
-    const userEmail = cookies.Email
+    let {state} = useLocation()
 
     const getData = async () => {
         try{
-          const response = await fetch(`https://projekt-backend.onrender.com/todos/${userEmail}`)
+          const response = await fetch(`https://projekt-backend.onrender.com/todos/${state.groupID}`)
           const json = await response.json()
           setTasks(json)
         } catch (err) {
@@ -25,10 +23,10 @@ const Tasks = () => {
 
     return(
         <>
-        <ListHeader listName={'Lista Zadań'} getData={getData} assigned={userEmail}/>
+        <ListHeader listName={'Lista Zadań'} getData={getData} assigned={state.groupID}/>
         {tasks?.map((task) => <ListItem key={task.id} task={task} getData={getData}/>)}
         </>
     )
 }
 
-export default Tasks
+export default GroupTasks
