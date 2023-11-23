@@ -1,5 +1,7 @@
 import { useState } from "react"
 import {useCookies} from 'react-cookie'
+import { useNavigate } from "react-router-dom";
+import { Paths } from '../routes/paths'
 
 const Auth = () => {
 
@@ -9,6 +11,7 @@ const Auth = () => {
     const [password, setPassword] = useState(null)
     const [confirmedPassword, setConfirmedPassword] = useState(null)
     const [cookies, setCookie, removeCookie] = useCookies(null)
+    const navigate = useNavigate()
 
     const viewLogin = (status) => {
       setError(null)
@@ -36,7 +39,7 @@ const Auth = () => {
         setCookie('Email', data.email)
         setCookie('AuthToken', data.token)
 
-        window.location.reload()
+        navigate(Paths.DASHBOARD)
       }
     }
 
