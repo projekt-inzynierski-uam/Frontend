@@ -7,15 +7,7 @@ import {useCookies} from 'react-cookie'
 import '../styles/index.css'
 
 const Dashboard = () => {
-  const [cookies, setCookie, removeCookie] = useCookies(null)
-  const userEmail = cookies.Email
-  const authToken = cookies.AuthToken
-
   return (
-    <>
-    {!authToken && <Auth/>}
-    {authToken &&
-    <>
     <div className="dashboard">
       <Sidebar />
       <div className='header-main-wrapper'>
@@ -25,9 +17,6 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-    </>
-    }
-    </>
   );
 };
 
