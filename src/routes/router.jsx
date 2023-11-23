@@ -10,6 +10,7 @@ import Settings from '../components/Settings'
 import Groups from '../components/Groups'
 import GroupTasks from '../components/GroupTasks'
 import Auth from '../components/Auth'
+import {Login} from '../components/Login/Login'
 
 export const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
     },
     {
         path: Paths.LOGIN,
-        element: <Auth />
+        element: <Login />
     },
     {
         path: Paths.DASHBOARD,
