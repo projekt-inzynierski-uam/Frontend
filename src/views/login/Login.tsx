@@ -1,17 +1,18 @@
 import { useId, useState } from 'react'
 import { useCookies } from 'react-cookie'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Paths } from '../../routes/paths'
+import { toast } from 'react-toastify'
 
 const ENDPOINT = 'https://projekt-backend.onrender.com/login'
 
 type Response = {
-  token: string,
+  token: string
   email: string
 }
 
 type FormValues = {
-  email: string,
+  email: string
   password: string
 }
 
@@ -32,12 +33,12 @@ export const Login = () => {
 
     setFormValues((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }))
   }
 
   const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    if (isLoading) return;
+    if (isLoading) return
     event.preventDefault()
 
     try {
@@ -46,22 +47,21 @@ export const Login = () => {
       const response = await fetch(ENDPOINT, {
         method: 'POST',
         headers: {
-          'content-type': 'application/json'
+          'content-type': 'application/json',
         },
-        body: JSON.stringify(formValues)
+        body: JSON.stringify(formValues),
       })
 
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
 
       const data: Response = await response.json()
-      
+
       setCookies('AuthToken', data.token)
       setCookies('Email', data.email)
 
       navigate(Paths.DASHBOARD)
+      toast.success('Zalogowano')
     } catch (error) {
-      // TODO: dodac react-toastify na error
-
       console.error(error)
     } finally {
       setIsLoading(false)
@@ -69,31 +69,33 @@ export const Login = () => {
   }
 
   return (
+    <div>
       <div>
-          <form onChange={handleOnChange} onSubmit={handleOnSubmit}>
-              <label htmlFor={emailInputId}>Adres e-mail</label>
-              <input 
-                required 
-                name='email' 
-                type='email' 
-                id={emailInputId} 
-                placeholder='janusz@gmail.com' 
-              />
+        <form onChange={handleOnChange} onSubmit={handleOnSubmit}>
+          <label htmlFor={emailInputId}>Adres e-mail</label>
+          <input
+            required
+            name="email"
+            type="email"
+            id={emailInputId}
+            placeholder="janusz@gmail.com"
+          />
 
-              <label htmlFor={passwordInputId}>Hasło</label>
-              <input 
-                required 
-                name='password' 
-                type='password' 
-                id={passwordInputId} 
-                placeholder='Password'
-              />
-              
-              <button disabled={isLoading}>{isLoading ? 'Ładowanie...' : 'Zaloguj'}</button>
-          </form>
+          <label htmlFor={passwordInputId}>Hasło</label>
+          <input
+            required
+            name="password"
+            type="password"
+            id={passwordInputId}
+            placeholder="Password"
+          />
+
+          <button disabled={isLoading}>{isLoading ? 'Ładowanie...' : 'Zaloguj'}</button>
+        </form>
       </div>
+      <div>
+        Nie masz jeszcze konta? <Link to={Paths.REGISTER}> Zarejestruj się </Link>
+      </div>
+    </div>
   )
 }
-
-
-

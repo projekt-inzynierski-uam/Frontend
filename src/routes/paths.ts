@@ -1,6 +1,7 @@
 export const Paths = {
   HOME: '/',
   LOGIN: '/login',
+  REGISTER: '/register',
   DASHBOARD: '/dashboard',
   DASHBOARD_CALENDAR: '/dashboard/kalendarz',
   DASHBOARD_TASKS: '/dashboard/zadania',

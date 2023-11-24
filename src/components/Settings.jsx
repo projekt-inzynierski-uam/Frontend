@@ -1,21 +1,22 @@
-import {useCookies} from 'react-cookie'
-import {Link} from 'react-router-dom'
+import { useCookies } from 'react-cookie'
+import { useNavigate } from 'react-router-dom'
+import { Paths } from '../routes/paths'
 
 const Settings = () => {
+  const navigate = useNavigate()
+  const [cookies, setCookie, removeCookie] = useCookies(null)
 
-    const [cookies, setCookie, removeCookie] = useCookies(null)
+  const signOut = () => {
+    removeCookie('Email')
+    removeCookie('AuthToken')
+    navigate(Paths.HOME)
+  }
 
-    const signOut = () => {
-        removeCookie('Email')
-        removeCookie('AuthToken')
-        window.location.reload()
-    }
-
-    return (
-        <>
-            <Link to={"/dashboard"}><button className="signout" onClick={signOut}>WYLOGUJ SIĘ</button></Link>
-        </>
-    )
+  return (
+    <button className="signout" onClick={signOut}>
+      WYLOGUJ SIĘ
+    </button>
+  )
 }
 
 export default Settings

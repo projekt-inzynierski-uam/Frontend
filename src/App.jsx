@@ -31,18 +31,15 @@ function App() {
   console.log(tasks)
 
   return (
-    <>
-    
-      <div className="app">
-        {!authToken && <Auth/>}
-        {authToken &&
-        <>
-        <p className="user-email">Witaj {userEmail} </p>
-        <ListHeader listName={'Lista Zadań'} getData={getData}/>
-        {tasks?.map((task) => <ListItem key={task.id} task={task} getData={getData}/>)}
-        </>}
-      </div>
-    </>
+    <div className="app">
+      {!authToken && <Auth/>}
+      {authToken &&
+      <>
+      <p className="user-email">Witaj {userEmail} </p>
+      <ListHeader listName={'Lista Zadań'} getData={getData}/>
+      {tasks?.map((task) => <ListItem key={task.id} task={task} getData={getData}/>)}
+      </>}
+    </div>
   )
 }
 
