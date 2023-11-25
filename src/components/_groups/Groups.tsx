@@ -18,13 +18,11 @@ async function fetchGroups() {
 export const Groups = () => {
   const [groups, setGroups] = useState([])
 
-  // useEffect(() => {
-  //   fetchGroups().then(setGroups)
-  // }, [])
+  useEffect(() => {
+    fetchGroups().then(setGroups)
+  }, [])
 
   console.log({ groups })
 
   return <div>group</div>
 }
-
-// npm i --save-dev @types/js-cookie

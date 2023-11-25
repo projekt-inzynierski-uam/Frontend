@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
 import styles from './styles.module.scss'
-
-import { toast } from 'react-toastify'
 import Cookies from 'js-cookie'
+import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { CreateGroup } from './components/CreateGroup'
 import { JoinGroup } from './components/JoinGroup'
@@ -15,8 +14,7 @@ async function fetchGroups() {
     const groups: Group[] = await response.json()
     return groups
   } catch (error) {
-    console.error(`Fetching groups failed: ${error}`)
-    toast.error('Wystąpił błąd w pobieraniu grup')
+    toast.error(`Wystąpił błąd w pobieraniu grup: ${error}`)
   }
 }
 

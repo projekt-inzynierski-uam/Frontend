@@ -1,8 +1,7 @@
-import React from 'react'
+import Cookies from 'js-cookie'
 import { useDisclosure, useSetState } from '@mantine/hooks'
 import { Modal, Button } from '@mantine/core'
-import { useState, useId } from 'react'
-import Cookies from 'js-cookie'
+import { useState } from 'react'
 
 type FormValues = {
   group_name: string
@@ -28,7 +27,7 @@ export const CreateGroup = () => {
     event.preventDefault()
 
     try {
-      const response = await fetch(`https://projekt-backend.onrender.com/group`, {
+      const response = await fetch('https://projekt-backend.onrender.com/group', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
