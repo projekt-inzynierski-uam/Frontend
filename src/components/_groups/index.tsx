@@ -1,10 +1,11 @@
-import styles from './styles.module.scss'
-import Cookies from 'js-cookie'
 import { useState, useEffect } from 'react'
+import styles from './styles.module.scss'
 import { toast } from 'react-toastify'
-import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
+
 import { CreateGroup } from './components/CreateGroup'
 import { JoinGroup } from './components/JoinGroup'
+import { GroupListItem } from './components/GroupListItem'
 
 async function fetchGroups() {
   const email = Cookies.get('Email')
@@ -35,17 +36,12 @@ export const Groups = () => {
   return (
     <>
       <div>
-        <CreateGroup />
-        <JoinGroup />
+        <CreateGroup setGroups={setGroups} />
+        <JoinGroup setGroups={setGroups} />
       </div>
       <div className={styles.GroupsList}>
         <h2>Grupy</h2>
-        {groups?.map(({ id, name }) => (
-          <div key={id} className={styles.Group}>
-            <span>{name || 'Brak nazwy'} </span>
-            <Link to={id}>Przejdź do grupy</Link>
-          </div>
-        ))}
+        {groups?.map(({ id, name }) => <GroupListItem key={id} id={id} name={name} />)}
       </div>
     </>
   )

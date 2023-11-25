@@ -10,7 +10,7 @@ import Tasks from '../components/Tasks'
 import Calendar from '../components/Calendar'
 import Settings from '../components/Settings'
 import { Groups } from '../components/_groups/'
-import GroupTasks from '../components/groups/GroupTasks'
+import { GroupTasks } from '../components/_groups/components/GroupTasks'
 
 export const router = createBrowserRouter([
   {
