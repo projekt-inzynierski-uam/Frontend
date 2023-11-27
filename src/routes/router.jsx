@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { ProtectedRoute } from '../routes/components/ProtectedRoute'
 import { Paths } from './paths'
-import { Login } from '../views/Login/Login'
+import { Login } from '../views/login/Login'
 import { Register } from '../views/register/Register'
 
 import HomePage from '../views/HomePage'
@@ -9,8 +9,8 @@ import Dashboard from '../views/Dashboard'
 import Tasks from '../components/Tasks'
 import Calendar from '../components/Calendar'
 import Settings from '../components/Settings'
-import { Groups } from '../components/_groups/'
-import { GroupTasks } from '../components/_groups/components/GroupTasks'
+import { Groups } from '../components/groups'
+import { GroupTasks } from '../components/groups/components/GroupTasks'
 
 export const router = createBrowserRouter([
   {

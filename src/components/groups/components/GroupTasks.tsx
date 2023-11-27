@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+type Task = {
+  id: string
+  title: string
+  assigned: string
+}
+
 async function fetchGroupTasks(id: string) {
   try {
     const response = await fetch(`https://projekt-backend.onrender.com/todos/${id}`)
@@ -9,12 +15,6 @@ async function fetchGroupTasks(id: string) {
   } catch (error) {
     console.error(error)
   }
-}
-
-type Task = {
-  id: string
-  title: string
-  assigned: string
 }
 
 export const GroupTasks = () => {
