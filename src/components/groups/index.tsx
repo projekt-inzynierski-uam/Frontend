@@ -6,7 +6,6 @@ import Cookies from 'js-cookie'
 import { CreateGroup } from './components/CreateGroup'
 import { JoinGroup } from './components/JoinGroup'
 import { GroupListItem } from './components/GroupListItem'
-//import { DeleteGroup } from './components/DeleteGroup'
 
 export type Group = {
   id: string
