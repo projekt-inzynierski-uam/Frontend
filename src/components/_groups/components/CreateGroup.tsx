@@ -1,14 +1,19 @@
-import React from 'react'
-import { useDisclosure, useSetState } from '@mantine/hooks'
-import { Modal, Button } from '@mantine/core'
-import { useState, useId } from 'react'
+import { useState } from 'react'
 import Cookies from 'js-cookie'
+import { useDisclosure } from '@mantine/hooks'
+import { Modal, Button } from '@mantine/core'
+
+import { Group } from '../'
 
 type FormValues = {
   group_name: string
 }
 
-export const CreateGroup = () => {
+type Props = {
+  setGroups: React.Dispatch<React.SetStateAction<Group[] | undefined>>
+}
+
+export const CreateGroup = ({ setGroups }: Props) => {
   const [opened, { open, close }] = useDisclosure(false)
 
   const [formValues, setFormValues] = useState<FormValues>({
@@ -28,7 +33,7 @@ export const CreateGroup = () => {
     event.preventDefault()
 
     try {
-      const response = await fetch(`https://projekt-backend.onrender.com/group`, {
+      const response = await fetch('https://projekt-backend.onrender.com/group', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -37,6 +42,11 @@ export const CreateGroup = () => {
       })
 
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+
+      setGroups((prevState = []) => [
+        ...prevState,
+        { id: formValues.group_name, name: formValues.group_name },
+      ])
 
       close()
       setFormValues({ group_name: '' })
