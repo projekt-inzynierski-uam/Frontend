@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react'
-import { useCookies } from 'react-cookie'
 import { useNavigate, useLocation } from 'react-router-dom'
+import Cookies from 'js-cookie'
 import { Paths } from '../paths'
 
 type ProtectedRouteProps = {
@@ -9,18 +9,19 @@ type ProtectedRouteProps = {
 }
 
 export const ProtectedRoute = ({ children, redirectPath = Paths.LOGIN }: ProtectedRouteProps) => {
-  const [cookies] = useCookies()
   const location = useLocation()
   const navigate = useNavigate()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
-    setIsAuthenticated(!!cookies.AuthToken)
+    const authToken = Cookies.get('AuthToken')
 
-    if (!cookies.AuthToken) {
+    setIsAuthenticated(!!authToken)
+
+    if (!authToken) {
       navigate(redirectPath)
     }
-  }, [redirectPath, cookies, navigate, location])
+  }, [redirectPath, navigate, location])
 
   return isAuthenticated && children
 }
