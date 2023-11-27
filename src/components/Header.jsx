@@ -1,17 +1,14 @@
+import '../styles/Header.css'
+import Cookies from 'js-cookie'
 
-import '../styles/Header.css';
-import {useCookies} from 'react-cookie';
+import { CookieName } from '../lib/constants/cookies'
 
 const Header = () => {
+  const userEmail = Cookies.get(CookieName.EMAIL)
 
-  const [cookies] = useCookies(null)
-  const userEmail = cookies.Email
+  console.log(userEmail)
 
-  return (
-    <div className="header">
-      Hi, {userEmail}
-    </div>
-  );
-};
+  return <div className="header">Hi, {userEmail}</div>
+}
 
-export default Header;
+export default Header

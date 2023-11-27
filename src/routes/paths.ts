@@ -6,6 +6,6 @@ export const Paths = {
   DASHBOARD_CALENDAR: '/dashboard/kalendarz',
   DASHBOARD_TASKS: '/dashboard/zadania',
   DASHBOARD_GROUPS: '/dashboard/grupy',
-  DASHBOARD_GROUP_PAGE: '/dashboard/grupy/:id',
+  DASHBOARD_GROUP_TASKS: '/dashboard/grupy/:id',
   DASHBOARD_SETTINGS: '/dashboard/ustawienia/',
 } as const
