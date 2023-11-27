@@ -1,0 +1,16 @@
+.GroupsList {
+  width: 100%;
+  overflow-y: scroll;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 10%;
+  border: 1px solid black;
+}

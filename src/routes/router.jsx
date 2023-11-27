@@ -9,8 +9,8 @@ import Dashboard from '../views/Dashboard'
 import Tasks from '../components/Tasks'
 import Calendar from '../components/Calendar'
 import Settings from '../components/Settings'
-import { Groups } from '../components/_groups/'
-import { GroupTasks } from '../components/_groups/components/GroupTasks'
+import { Groups } from '../components/groups'
+import { GroupTasks } from '../components/groups/components/GroupTasks'
 
 export const router = createBrowserRouter([
   {
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: Paths.DASHBOARD_GROUP_PAGE,
+        path: Paths.DASHBOARD_GROUP_TASKS,
         element: (
           <ProtectedRoute>
             <GroupTasks />

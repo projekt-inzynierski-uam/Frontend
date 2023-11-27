@@ -1,8 +1,10 @@
 import { useId, useState } from 'react'
-import { useCookies } from 'react-cookie'
 import { useNavigate, Link } from 'react-router-dom'
-import { Paths } from '../../routes/paths'
 import { toast } from 'react-toastify'
+import Cookies from 'js-cookie'
+
+import { Paths } from '../../routes/paths'
+import { CookieName } from '../../lib/constants/cookies'
 
 const ENDPOINT = 'https://projekt-backend.onrender.com/login'
 
@@ -19,7 +21,6 @@ type FormValues = {
 export const Login = () => {
   const emailInputId = useId()
   const passwordInputId = useId()
-  const [_, setCookies] = useCookies()
   const navigate = useNavigate()
 
   const [isLoading, setIsLoading] = useState(false)
@@ -56,8 +57,8 @@ export const Login = () => {
 
       const data: Response = await response.json()
 
-      setCookies('AuthToken', data.token)
-      setCookies('Email', data.email)
+      Cookies.set(CookieName.AUTH_TOKEN, data.token)
+      Cookies.set(CookieName.EMAIL, data.email)
 
       navigate(Paths.DASHBOARD)
       toast.success('Zalogowano')
