@@ -26,7 +26,7 @@
 	position:absolute;
 	left:567px;
 	top:488px;
-	background-image:url(assets/illustration3_1.png);
+	background-image:url('../assets/illustration3_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -36,7 +36,7 @@
 	position:absolute;
 	left:0px;
 	top:687px;
-	background-image:url(assets/bg_content.png);
+	background-image:url('../assets/bg_content.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -46,7 +46,7 @@
 	position:absolute;
 	left:255px;
 	top:0px;
-	background-image:url(assets/ellipse_1_1.png);
+	background-image:url('../assets/ellipse_1_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -142,7 +142,7 @@
 	position:absolute;
 	left:76px;
 	top:5px;
-	background-image:url(assets/arrow_downward_24px_1.png);
+	background-image:url('../assets/arrow_downward_24px_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -166,7 +166,7 @@
 	position:absolute;
 	left:718px;
 	top:79px;
-	background-image:url(assets/01.png);
+	background-image:url('../assets/01.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -255,7 +255,7 @@
 	position:absolute;
 	left:76px;
 	top:9.177214622497559px;
-	background-image:url(assets/arrow_downward_24px_1.png);
+	background-image:url('../assets/arrow_downward_24px_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -279,7 +279,7 @@
 	position:absolute;
 	left:0px;
 	top:57px;
-	background-image:url(assets/02.png);
+	background-image:url('../assets/02.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -368,7 +368,7 @@
 	position:absolute;
 	left:76px;
 	top:8.227848052978516px;
-	background-image:url(assets/arrow_downward_24px_1.png);
+	background-image:url('../assets/arrow_downward_24px_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -392,7 +392,7 @@
 	position:absolute;
 	left:708px;
 	top:79px;
-	background-image:url(assets/01.png);
+	background-image:url('../assets/01.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -648,7 +648,7 @@
 	position:absolute;
 	left:106px;
 	top:2px;
-	background-image:url(assets/arrow_downward_24px_1.png);
+	background-image:url('../assets/arrow_downward_24px_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -695,7 +695,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	background-image:url(assets/cart_1.png);
+	background-image:url('../assets/cart_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -780,7 +780,7 @@
 	position:absolute;
 	left:0px;
 	top:85px;
-	background-image:url(assets/tw_1.png);
+	background-image:url('../assets/tw_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -790,7 +790,7 @@
 	position:absolute;
 	left:0px;
 	top:120px;
-	background-image:url(assets/vector_1.png);
+	background-image:url('../assets/vector_1.png');
 	background-repeat:no-repeat;
 	background-size:cover;
 }
