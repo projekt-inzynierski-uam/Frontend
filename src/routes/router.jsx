@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { ProtectedRoute } from '../routes/components/ProtectedRoute'
 import { Paths } from './paths'
-import { Login } from '../views/Login/Login'
+import { Login } from '../views/login/Login'
 import { Register } from '../views/register/Register'
 
 import HomePage from '../views/HomePage'
