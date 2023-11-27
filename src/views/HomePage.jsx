@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import '../styles/HomePage.css'
-
 import { Paths } from '../routes/paths'
 
 const HomePage = () => {
