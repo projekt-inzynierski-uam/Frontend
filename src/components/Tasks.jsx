@@ -11,7 +11,7 @@ const Tasks = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch(`https://projekt-backend.onrender.com/todos/${userEmail}`)
+      const response = await fetch(`${import.meta.env.VITE_DBSERVER}/todos/${userEmail}`)
       const json = await response.json()
       setTasks(json)
     } catch (err) {
