@@ -7,7 +7,6 @@ import { Register } from '../views/register/Register'
 import HomePage from '../views/HomePage'
 import Dashboard from '../views/Dashboard'
 import Tasks from '../components/Tasks'
-import Calendar from '../components/Calendar'
 import Settings from '../components/Settings'
 import { Groups } from '../components/groups'
 import { GroupTasks } from '../components/groups/components/GroupTasks'
@@ -33,14 +32,6 @@ export const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      {
-        path: Paths.DASHBOARD_CALENDAR,
-        element: (
-          <ProtectedRoute>
-            <Calendar />
-          </ProtectedRoute>
-        ),
-      },
       {
         path: Paths.DASHBOARD_TASKS,
         element: (
