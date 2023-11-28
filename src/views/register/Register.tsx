@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { Paths } from '../../routes/paths'
 import { toast } from 'react-toastify'
 
-const ENDPOINT = 'https://projekt-backend.onrender.com/signup'
+const ENDPOINT = `${import.meta.env.VITE_DBSERVER}/signup`
 
 type FormValues = {
     email: string,
