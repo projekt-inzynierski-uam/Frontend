@@ -13,7 +13,7 @@ const Modal = ({ mode, setShowModal, getData, task, assignedTo }) => {
   const postData = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(`https://projekt-backend.onrender.com/todos`, {
+      const response = await fetch(`${import.meta.env.VITE_DBSERVER}/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -31,7 +31,7 @@ const Modal = ({ mode, setShowModal, getData, task, assignedTo }) => {
   const editData = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(`https://projekt-backend.onrender.com/todos/${task.id}`, {
+      const response = await fetch(`${import.meta.env.VITE_DBSERVER}/todos/${task.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

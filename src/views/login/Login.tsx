@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 import { Paths } from '../../routes/paths'
 import { CookieName } from '../../lib/constants/cookies'
 
-const ENDPOINT = 'https://projekt-backend.onrender.com/login'
+const ENDPOINT = `${import.meta.env.VITE_DBSERVER}/login`
 
 type Response = {
   token: string
