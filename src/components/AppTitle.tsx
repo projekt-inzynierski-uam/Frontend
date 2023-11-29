@@ -1,5 +1,15 @@
-import { Title } from '@mantine/core' 
+import { Title, Image, Group } from '@mantine/core' 
+import crossImage from '../assets/x-mark.png'
 
 export const AppTitle = () => {
-  return <Title order={2}>Sortorio</Title>
+  return (
+    <>
+      <Group gap="xs">
+        <Image
+          src={crossImage}
+        />
+        <Title ff="Oswald" order={2} c='white'>Sortorio</Title>
+      </Group>
+    </>
+  )
 }

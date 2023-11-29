@@ -10,24 +10,25 @@ const Dashboard = () => {
 
   return (
     <AppShell
-      header={{ height: { base: 40, md: 50, lg: 60 } }}
+      header={{ height: { base: 60, md: 70, lg: 80 }}}
       navbar={{
-        width: { base: 150, md: 200, lg: 200, xl: 250 },
+        width: { base: 150, md: 200, lg: 250, xl: 250 },
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
       padding="md"
+      withBorder={false}
     >
-      <AppShell.Header>
-        <Group h="100%" px="md" justify='space-between'>
+      <AppShell.Header bg="#E85A4F" p="md">
+        <Group h="100%" px="md" justify='space-between' >
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Header/>
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar p="md">
+      <AppShell.Navbar p="md" bg="#E98074">
         <Sidebar/>
       </AppShell.Navbar>
-      <AppShell.Main>
+      <AppShell.Main bg="#EAE7DC">
         <Outlet/>
       </AppShell.Main>
     </AppShell>

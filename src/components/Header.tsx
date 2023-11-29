@@ -12,7 +12,7 @@ export const Header = () => {
   const signOut = () => {
     Cookies.remove(CookieName.EMAIL)
     Cookies.remove(CookieName.AUTH_TOKEN)
-    navigate(Paths.HOME)
+    navigate(Paths.LOGIN)
   }
 
   return(
@@ -20,7 +20,7 @@ export const Header = () => {
       <AppTitle/>
       <Menu shadow="md" width={200}>
         <Menu.Target>
-          <Avatar variant="light" radius="xl" color="orange" src="" />
+          <Avatar variant="light" radius="xl"/>
         </Menu.Target>
         <Menu.Dropdown>
           <Menu.Item>
