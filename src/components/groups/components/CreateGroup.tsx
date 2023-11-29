@@ -33,7 +33,7 @@ export const CreateGroup = ({ setGroups }: Props) => {
     event.preventDefault()
 
     try {
-      const response = await fetch('https://projekt-backend.onrender.com/group', {
+      const response = await fetch(`${import.meta.env.VITE_DBSERVER}/group`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
