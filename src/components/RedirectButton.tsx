@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles/RedirectButton.css'
+import { Text } from '@mantine/core'
 
 type Props = {
   path: string
@@ -8,8 +8,8 @@ type Props = {
 
 export const RedirectButton = ({ path, name }: Props) => {
   return (
-    <Link to={path} className="redirect-button">
-      <p>{name}</p>
+    <Link to={path}>
+      <Text>{name}</Text>
     </Link>
   )
 }

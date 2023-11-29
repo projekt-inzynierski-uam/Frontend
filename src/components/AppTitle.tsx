@@ -1,5 +1,5 @@
-import '../styles/AppTitle.css'
+import { Title } from '@mantine/core' 
 
 export const AppTitle = () => {
-  return <h1 className="app-title">Sortorio</h1>
+  return <Title order={2}>Sortorio</Title>
 }
