@@ -16,7 +16,7 @@ async function fetchGroups() {
   const email = Cookies.get('Email')
 
   try {
-    const response = await fetch(`https://projekt-backend.onrender.com/groups/${email}`)
+    const response = await fetch(`${import.meta.env.VITE_DBSERVER}/groups/${email}`)
     const groups: Group[] = await response.json()
     return groups
   } catch (error) {

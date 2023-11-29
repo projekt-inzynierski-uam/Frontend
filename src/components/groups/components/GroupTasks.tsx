@@ -9,7 +9,7 @@ type Task = {
 
 async function fetchGroupTasks(id: string) {
   try {
-    const response = await fetch(`https://projekt-backend.onrender.com/todos/${id}`)
+    const response = await fetch(`${import.meta.env.VITE_DBSERVER}/todos/${id}`)
     const data: Task[] = await response.json()
     return data
   } catch (error) {

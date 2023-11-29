@@ -8,7 +8,7 @@ type Props = {
 export const DeleteGroup = ({ id, setGroups }: Props) => {
   const handleOnClick = async () => {
     try {
-      const response = await fetch(`https://projekt-backend.onrender.com/groups/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_DBSERVER}/groups/${id}`, {
         method: 'DELETE',
       })
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)

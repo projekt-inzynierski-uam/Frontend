@@ -33,7 +33,7 @@ export const JoinGroup = ({ setGroups }: Props) => {
     event.preventDefault()
 
     try {
-      const response = await fetch('https://projekt-backend.onrender.com/groupjoin', {
+      const response = await fetch(`${import.meta.env.VITE_DBSERVER}/groupjoin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formValues, user_email: Cookies.get('Email') }),
