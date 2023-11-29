@@ -1,7 +1,7 @@
 import { Title, Image, Group } from '@mantine/core' 
 import crossImage from '../assets/x-mark.png'
 
-export const AppTitle = () => {
+export const Logo = () => {
   return (
     <>
       <Group gap="xs">

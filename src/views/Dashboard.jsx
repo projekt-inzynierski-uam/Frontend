@@ -1,6 +1,6 @@
 import { Sidebar } from '../components/Sidebar'
 import { Outlet } from 'react-router-dom'
-import { Header } from '../components/Header'
+import { HeaderContent } from '../components/HeaderContent'
 
 import { useDisclosure } from '@mantine/hooks';
 import { AppShell, Group, Burger, Avatar } from '@mantine/core';
@@ -22,7 +22,7 @@ const Dashboard = () => {
       <AppShell.Header bg="#E85A4F" p="md">
         <Group h="100%" px="md" justify='space-between' >
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Header/>
+          <HeaderContent/>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md" bg="#E98074">

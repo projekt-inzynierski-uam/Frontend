@@ -1,6 +1,6 @@
 import { RedirectButton } from './RedirectButton'
 import { Paths } from '../routes/paths'
-import { Divider, Text, Flex } from '@mantine/core'
+import { Text, Flex } from '@mantine/core'
 
 export const Sidebar = () => {
   return (
@@ -13,7 +13,6 @@ export const Sidebar = () => {
         h="100%"
       >
         <Text>Panel Główny</Text>
-        <Divider size="md"/>
         <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Zadania'} />
         <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} />
       </Flex>
