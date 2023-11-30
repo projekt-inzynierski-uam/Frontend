@@ -1,6 +1,6 @@
 import { RedirectButton } from './RedirectButton'
 import { Paths } from '../routes/paths'
-import { Text, Flex } from '@mantine/core'
+import { Text, Flex, Center } from '@mantine/core'
 
 export const Sidebar = () => {
   return (
@@ -9,12 +9,39 @@ export const Sidebar = () => {
         justify="center"
         align="center"
         direction="column"
-        gap="md"
-        h="100%"
+        gap="xl"
+        h="70%"
+        p="md"
       >
-        <Text>Panel Główny</Text>
-        <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Zadania'} />
-        <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} />
+        <Flex
+          justify="center"
+          align="center"
+          direction="column"
+          w="100%"
+          gap="xs"
+        >
+          <Center>
+            <Text p="xl" size="xl" c="white" w="100%" ff="Oswald">Zadania</Text>
+          </Center>
+          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Panel'} />
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie zadaniami'} />
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie celami'} />
+        </Flex>
+
+        <Flex
+          justify="center"
+          align="center"
+          direction="column"
+          w="100%"
+          gap="xs"
+        >
+          <Center>
+            <Text p="xl" size="xl" c="white" w="100%" ff="Oswald">Grupy</Text>
+          </Center>
+          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Zadania'} />
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} />
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} />
+        </Flex>
       </Flex>
     </>
   )
