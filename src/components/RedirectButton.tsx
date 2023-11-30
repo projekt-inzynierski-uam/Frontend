@@ -1,15 +1,29 @@
 import { Link } from 'react-router-dom'
-import '../styles/RedirectButton.css'
+import { Text, Box, Image, Group } from '@mantine/core'
 
 type Props = {
   path: string
   name: string
+  icon: string
 }
 
-export const RedirectButton = ({ path, name }: Props) => {
+const anchorStyles = {
+  textDecoration: "none",
+}
+
+export const RedirectButton = ({ path, name, icon }: Props) => {
   return (
-    <Link to={path} className="redirect-button">
-      <p>{name}</p>
-    </Link>
+    <Box w="100%" ta="center" style={{border: "1px solid #E85A4F", "border-radius":"20px"}}>
+      <Link to={path} style={anchorStyles}>
+      <Group justify='center'>
+        <Image 
+          src={icon}  
+          fit="contain"
+          height={23}
+        />
+        <Text c="white" ff="Oswald" fz="xl">{name}</Text>
+      </Group>
+      </Link>
+    </Box>
   )
 }
