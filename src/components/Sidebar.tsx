@@ -1,6 +1,9 @@
 import { RedirectButton } from './RedirectButton'
 import { Paths } from '../routes/paths'
-import { Text, Flex, Center } from '@mantine/core'
+import { Flex, Center, Divider, Title } from '@mantine/core'
+import PanelIcon from '../assets/panelicon.svg'
+import ZadaniaIcon from '../assets/menedzerzadan.svg'
+import CeleIcon from '../assets/cele.svg'
 
 export const Sidebar = () => {
   return (
@@ -11,7 +14,6 @@ export const Sidebar = () => {
         direction="column"
         gap="xl"
         h="70%"
-        p="md"
       >
         <Flex
           justify="center"
@@ -21,13 +23,13 @@ export const Sidebar = () => {
           gap="xs"
         >
           <Center>
-            <Text p="xl" size="xl" c="white" w="100%" ff="Oswald">Zadania</Text>
+            <Title order={1} c="white" ff="Oswald">Zadania</Title>
           </Center>
-          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Panel'} />
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie zadaniami'} />
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie celami'} />
+          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Panel'} icon={PanelIcon}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie zadaniami'} icon={ZadaniaIcon}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie celami'} icon={CeleIcon}/>
         </Flex>
-
+        <Divider size="lg"/>
         <Flex
           justify="center"
           align="center"
@@ -36,11 +38,11 @@ export const Sidebar = () => {
           gap="xs"
         >
           <Center>
-            <Text p="xl" size="xl" c="white" w="100%" ff="Oswald">Grupy</Text>
+            <Title order={1} c="white" ff="Oswald">Grupy</Title>
           </Center>
-          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Zadania'} />
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} />
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} />
+          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Zadania'} icon={""}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} icon={""}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} icon={""}/>
         </Flex>
       </Flex>
     </>

@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   return (
     <AppShell
-      header={{ height: { base: 60, md: 70, lg: 80 }}}
+      header={{ height: { base: 80, md: 90, lg: 100 }}}
       navbar={{
         width: { base: 150, md: 200, lg: 250, xl: 250 },
         breakpoint: 'sm',
