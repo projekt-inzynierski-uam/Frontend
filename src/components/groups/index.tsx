@@ -16,8 +16,6 @@ export type Group = {
 async function fetchGroups() {
   const email = Cookies.get(CookieName.EMAIL)
 
-  console.log({ email })
-
   try {
     const response = await fetch(`${import.meta.env.VITE_DBSERVER}/groups/${email}`)
     const groups: Group[] = await response.json()
