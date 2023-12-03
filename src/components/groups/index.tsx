@@ -6,6 +6,7 @@ import Cookies from 'js-cookie'
 import { CreateGroup } from './components/CreateGroup'
 import { JoinGroup } from './components/JoinGroup'
 import { GroupListItem } from './components/GroupListItem'
+import { CookieName } from '../../lib/constants/cookies'
 
 export type Group = {
   id: string
@@ -13,7 +14,9 @@ export type Group = {
 }
 
 async function fetchGroups() {
-  const email = Cookies.get('Email')
+  const email = Cookies.get(CookieName.EMAIL)
+
+  console.log({ email })
 
   try {
     const response = await fetch(`${import.meta.env.VITE_DBSERVER}/groups/${email}`)
