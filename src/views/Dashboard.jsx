@@ -2,15 +2,15 @@ import { Sidebar } from '../components/Sidebar'
 import { Outlet } from 'react-router-dom'
 import { HeaderContent } from '../components/HeaderContent'
 
-import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Group, Burger, Avatar } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks'
+import { AppShell, Group, Burger, Avatar } from '@mantine/core'
 
 const Dashboard = () => {
-  const [opened, {toggle}] = useDisclosure();
+  const [opened, { toggle }] = useDisclosure()
 
   return (
     <AppShell
-      header={{ height: { base: 80, md: 90, lg: 100 }}}
+      header={{ height: { base: 80, md: 90, lg: 100 } }}
       navbar={{
         width: { base: 150, md: 200, lg: 250, xl: 250 },
         breakpoint: 'sm',
@@ -19,17 +19,21 @@ const Dashboard = () => {
       padding="md"
       withBorder="false"
     >
-      <AppShell.Header bg="#E85A4F" p="md" style={{ "border-bottom-left-radius": "20px", "border-bottom": "5px solid white" }}>
-        <Group h="100%" px="md" justify='space-between' >
+      <AppShell.Header
+        bg="#E85A4F"
+        p="md"
+        style={{ borderBottomLeftRadius: '20px', borderBottom: '5px solid white' }}
+      >
+        <Group h="100%" px="md" justify="space-between">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <HeaderContent/>
+          <HeaderContent />
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar p="md" bg="#E98074" style={{ "border-radius": "20px" }}>
-        <Sidebar/>
+      <AppShell.Navbar p="md" bg="#E98074" style={{ borderRadius: '20px' }}>
+        <Sidebar />
       </AppShell.Navbar>
       <AppShell.Main bg="#FFF5F3">
-        <Outlet/>
+        <Outlet />
       </AppShell.Main>
     </AppShell>
   )
