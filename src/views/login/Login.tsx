@@ -1,3 +1,5 @@
+import { Flex, Button, TextInput, PasswordInput, Paper, Stack, Text, Group } from '@mantine/core';
+import { useForm } from '@mantine/form';
 import { useId, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -5,6 +7,7 @@ import Cookies from 'js-cookie'
 
 import { Paths } from '../../routes/paths'
 import { CookieName } from '../../lib/constants/cookies'
+import '../../styles/Login.css'
 
 const ENDPOINT = `${import.meta.env.VITE_DBSERVER}/login`
 
@@ -69,34 +72,72 @@ export const Login = () => {
     }
   }
 
+  const form = useForm({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+
+    validate: {
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      password: (val) => (val.length <= 6 ? 'Hasło powinno zawierać przynajmniej 6 znaków' : null),
+    },
+  });
+
+
   return (
-    <div>
-      <div>
-        <form onChange={handleOnChange} onSubmit={handleOnSubmit}>
-          <label htmlFor={emailInputId}>Adres e-mail</label>
-          <input
-            required
-            name="email"
-            type="email"
-            id={emailInputId}
-            placeholder="janusz@gmail.com"
-          />
+    <div class="login-form-container">
+      
+      <Paper 
+        bg="rgb(233, 128, 116)"
+        shadow="xs"
+        radius="lg"
+        p="xl"
+      >
+          <Stack
+            h={270}
+            w={250}
+          >
+            <form onChange={handleOnChange} onSubmit={handleOnSubmit}>
+            
+              <TextInput
+                required
+                size="md"
+                radius="lg"
+                label="Adres email"
+                id={emailInputId}
+                placeholder="janusz@gmail.com"
+                value={form.values.email}
+                onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
+                error={form.errors.email && 'Nieprawidłowy adres email'}
+                styles={{ input: { backgroundColor: '#eae7dc', borderColor: 'red' }, label: { color: '#eae7dc', fontFamily: 'Oswald' } }}
+              />
 
-          <label htmlFor={passwordInputId}>Hasło</label>
-          <input
-            required
-            name="password"
-            type="password"
-            id={passwordInputId}
-            placeholder="Password"
-          />
+              <PasswordInput
+                required
+                size="md"
+                radius="lg"
+                label="Hasło"
+                id={passwordInputId}
+                placeholder="Hasło"
+                value={form.values.password}
+                onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                error={form.errors.password && 'Hasło powinno zawierać przynajmniej 6 znaków'}
+                styles={{ input: { backgroundColor: '#eae7dc', borderColor: 'red' }, label: { color: '#eae7dc', fontFamily: 'Oswald' } }}
+              />
+              <br />
+                <Button type="submit" fullWidth variant="filled" color="#8e8d8a" size="md" radius="lg" disabled={isLoading}>{isLoading ? 'Ładowanie...' : 'Zaloguj'}</Button>
 
-          <button disabled={isLoading}>{isLoading ? 'Ładowanie...' : 'Zaloguj'}</button>
-        </form>
-      </div>
-      <div>
-        Nie masz jeszcze konta? <Link to={Paths.REGISTER}> Zarejestruj się </Link>
-      </div>
+              <Text
+              style={{ fontFamily: 'Oswald' }}
+              color="#eae7dc"
+              >
+                Nie masz konta? <Link to={Paths.REGISTER} style={{textDecoration: 'none', color: '#eae7dc', fontFamily: 'Oswald' }} > Zarejestruj się </Link>
+              </Text>
+              
+            </form>
+          </Stack>
+        </Paper>
     </div>
   )
 }
