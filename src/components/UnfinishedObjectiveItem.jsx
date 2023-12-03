@@ -1,6 +1,6 @@
 import { Button, Group, Grid, Text } from "@mantine/core"
 
-const UnfinishedObjectiveItem = (objective: any) => {
+const UnfinishedObjectiveItem = (objective) => {
     return(
         <Grid>
             <Grid.Col span={8}>
