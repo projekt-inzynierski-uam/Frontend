@@ -1,23 +1,31 @@
-import { Button, Group, Grid, Text } from "@mantine/core"
+import { Button, Group, Flex, Text, Modal } from "@mantine/core"
+import { useDisclosure } from '@mantine/hooks';
 
-const UnfinishedObjectiveItem = (objective) => {
+const UnfinishedObjectiveItem = ({objective}) => {
+    const [opened, { open, close }] = useDisclosure(false);
     return(
-        <Grid>
-            <Grid.Col span={8}>
-                <Group>
-                    <Text>{objective.title}</Text>
-                    <Group>
+        <>
+            <Modal opened={opened} onClose={close} title="Edytuj Cel" centered>
+                {/* Modal content */}
+            </Modal>
+            <Flex
+                gap="2px"
+                justify="center"
+                align="center"
+                direction="row"
+                p="xs"
+                w="100%"
+            >
+                <Group c="#FFF5F3" bg="#E98074" w="100%"style={{borderRadius:"50px", height:"40px"}} ff={"Oswald"}>
+                    <Text ta="center" pl="10px" size="lg" w="60%">{objective.title}</Text>
+                    <Group bg="#8E8D8A" miw="20%" maw="50%" style={{borderRadius:"200px"}} ff={"Oswald"} justify="center">
                         <Text>{objective.current_points}/{objective.max_points}</Text>
                     </Group>
                 </Group>
-            </Grid.Col>
-            <Grid.Col span={2}>
-                <Button>Edytuj</Button>
-            </Grid.Col>
-            <Grid.Col span={2}>
-                <Button>Usuń</Button>
-            </Grid.Col>
-        </Grid>
+                <Button onClick={open} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Edytuj</Button>
+                <Button bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>
+            </Flex>
+        </>
     )
 }
 

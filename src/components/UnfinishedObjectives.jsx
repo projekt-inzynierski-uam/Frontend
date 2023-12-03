@@ -10,10 +10,9 @@ const UnfinishedObjectives = () => {
 
     const getData = async () => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/objectives/${userEmail}`)
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/unfinishedobjectives/${userEmail}`)
           const json = await response.json()
           setUnfinishedObjectives(json)
-          console.log(json)
         } catch (err) {
           console.error(err)
         }
@@ -37,7 +36,7 @@ const UnfinishedObjectives = () => {
                 style={{border:"7px solid #E98074", borderRadius:"50px"}}
             >
                     {unfinishedObjectives?.map((unfinishedObjective) => (
-                        <UnfinishedObjectiveItem objective={unfinishedObjective}/>
+                        <UnfinishedObjectiveItem key={unfinishedObjective.id} objective={unfinishedObjective}/>
                     ))}
             </Flex>
         </>
