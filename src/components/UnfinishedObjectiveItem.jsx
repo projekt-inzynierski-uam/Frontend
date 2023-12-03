@@ -1,7 +1,7 @@
 import { Button, Group, Flex, Text, Modal } from "@mantine/core"
 import { useDisclosure } from '@mantine/hooks';
 
-const UnfinishedObjectiveItem = ({objective}) => {
+const UnfinishedObjectiveItem = ({objective, getData}) => {
     const [opened, { open, close }] = useDisclosure(false);
 
     const deleteObjective = async () => {

@@ -1,4 +1,4 @@
-import {Flex, ScrollArea, Title, Center} from '@mantine/core'
+import {Flex, ScrollArea, Title, Center, Button, Modal} from '@mantine/core'
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { CookieName } from '../lib/constants/cookies'
@@ -18,6 +18,8 @@ const UnfinishedObjectives = () => {
         }
     }
     
+    
+
     useEffect(() => {
         getData()
     }, [])
@@ -37,10 +39,13 @@ const UnfinishedObjectives = () => {
             >
                 <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
                     {unfinishedObjectives?.map((unfinishedObjective) => (
-                        <UnfinishedObjectiveItem key={unfinishedObjective.id} objective={unfinishedObjective}/>
+                        <UnfinishedObjectiveItem key={unfinishedObjective.id} objective={unfinishedObjective} getData={getData}/>
                     ))}
                 </ScrollArea>
             </Flex>
+            <Center>
+                <Button bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Dodaj nowy cel</Button>
+            </Center>
         </>
     )
 }
