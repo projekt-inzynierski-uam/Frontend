@@ -3,10 +3,24 @@ import { useDisclosure } from '@mantine/hooks';
 
 const UnfinishedObjectiveItem = ({objective}) => {
     const [opened, { open, close }] = useDisclosure(false);
+
+    const deleteObjective = async () => {
+        try{
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/deleteobjective/${objective.id}`,{
+            method: 'DELETE',
+        })
+        if(response.status === 200){
+            getData()
+        }
+        }catch(err){
+          console.error(err)
+        }
+    }
+
     return(
         <>
             <Modal opened={opened} onClose={close} title="Edytuj Cel" centered>
-                {/* Modal content */}
+                
             </Modal>
             <Flex
                 gap="2px"
@@ -23,7 +37,7 @@ const UnfinishedObjectiveItem = ({objective}) => {
                     </Group>
                 </Group>
                 <Button onClick={open} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Edytuj</Button>
-                <Button bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>
+                <Button onClick={deleteObjective} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>
             </Flex>
         </>
     )
