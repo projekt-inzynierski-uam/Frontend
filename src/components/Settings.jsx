@@ -1,15 +1,13 @@
 import { useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie'
 
 import { Paths } from '../routes/paths'
-import { CookieName } from '../lib/constants/cookies'
+import { removeAllCookies } from '../lib/constants/helpers/removeAllCookies'
 
 const Settings = () => {
   const navigate = useNavigate()
 
   const signOut = () => {
-    Cookies.remove(CookieName.EMAIL)
-    Cookies.remove(CookieName.AUTH_TOKEN)
+    removeAllCookies()
     navigate(Paths.HOME)
   }
 
