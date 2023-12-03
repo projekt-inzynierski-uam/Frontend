@@ -1,5 +1,6 @@
 import { Button, Group, Flex, Text, Modal } from "@mantine/core"
 import { useDisclosure } from '@mantine/hooks';
+import EditObjectiveModal from "./modals/EditObjectiveModal";
 
 const UnfinishedObjectiveItem = ({objective, getData}) => {
     const [opened, { open, close }] = useDisclosure(false);
@@ -36,7 +37,7 @@ const UnfinishedObjectiveItem = ({objective, getData}) => {
                         <Text>{objective.current_points}/{objective.max_points}</Text>
                     </Group>
                 </Group>
-                <Button onClick={open} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Edytuj</Button>
+                <EditObjectiveModal/>
                 <Button onClick={deleteObjective} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>
             </Flex>
         </>

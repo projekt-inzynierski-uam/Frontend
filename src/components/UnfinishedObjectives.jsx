@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { CookieName } from '../lib/constants/cookies'
 import UnfinishedObjectiveItem from './UnfinishedObjectiveItem'
+import CreateObjectiveModal from './modals/CreateObjectiveModal'
 
 const UnfinishedObjectives = () => {
     const [unfinishedObjectives, setUnfinishedObjectives] = useState(null)
@@ -18,8 +19,6 @@ const UnfinishedObjectives = () => {
         }
     }
     
-    
-
     useEffect(() => {
         getData()
     }, [])
@@ -44,7 +43,7 @@ const UnfinishedObjectives = () => {
                 </ScrollArea>
             </Flex>
             <Center>
-                <Button bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Dodaj nowy cel</Button>
+                <CreateObjectiveModal/>
             </Center>
         </>
     )
