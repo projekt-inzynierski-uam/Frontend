@@ -27,7 +27,7 @@ export const Sidebar = () => {
           </Center>
           <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Panel'} icon={PanelIcon}/>
           <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie zadaniami'} icon={ZadaniaIcon}/>
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie celami'} icon={CeleIcon}/>
+          <RedirectButton path={Paths.DASHBOARD_OBJECTIVES} name={'Zarządzanie celami'} icon={CeleIcon}/>
         </Flex>
         <Divider size="lg"/>
         <Flex
