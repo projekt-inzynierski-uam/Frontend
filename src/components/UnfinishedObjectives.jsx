@@ -36,11 +36,9 @@ const UnfinishedObjectives = () => {
                 direction="column"
                 style={{border:"7px solid #E98074", borderRadius:"50px"}}
             >
-                <ScrollArea.Autosize>
                     {unfinishedObjectives?.map((unfinishedObjective) => (
                         <UnfinishedObjectiveItem objective={unfinishedObjective}/>
                     ))}
-                </ScrollArea.Autosize>
             </Flex>
         </>
     )
