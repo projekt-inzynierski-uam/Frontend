@@ -1,6 +1,6 @@
 import { Button, Group, Flex, Text, Modal } from "@mantine/core"
 import { useDisclosure } from '@mantine/hooks';
-import EditObjectiveModal from "./modals/EditObjectiveModal";
+import EditObjectiveModal from "../modals/EditObjectiveModal";
 
 const UnfinishedObjectiveItem = ({objective, getData}) => {
     const [opened, { close }] = useDisclosure(false);

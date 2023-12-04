@@ -9,9 +9,9 @@ import Dashboard from '../views/Dashboard'
 import Settings from '../components/Settings'
 import { Groups } from '../components/groups'
 import { GroupTasks } from '../components/groups/components/GroupTasks'
-import ObjectiveList from '../components/ObjectiveList'
-import TaskDashboard from '../components/TaskDashboard'
-import TaskManager from '../components/TaskManager'
+import ObjectiveList from '../components/objectives/ObjectiveList'
+import TaskDashboard from '../components/taskdashboard/TaskDashboard'
+import TaskManager from '../components/taskmanager/TaskManager'
 
 export const router = createBrowserRouter([
   {
