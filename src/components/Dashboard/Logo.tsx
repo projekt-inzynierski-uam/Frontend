@@ -1,5 +1,5 @@
 import { Title, Image, Group } from '@mantine/core' 
-import crossImage from '../assets/x-mark.png'
+import crossImage from '../../assets/x-mark.png'
 
 export const Logo = () => {
   return (

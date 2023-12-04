@@ -1,9 +1,9 @@
 import { Grid, Title, Center } from '@mantine/core'
-import TodayTasks from './TodayTasks'
-import IncomingTasks from './IncomingTasks'
+import TodayTasks from '../TaskManager/TodayTasks'
+import IncomingTasks from '../TaskManager/IncomingTasks'
 import ActiveObjective from './ActiveObjective'
 import Cookies from 'js-cookie'
-import { CookieName } from '../lib/constants/cookies'
+import { CookieName } from '../../lib/constants/cookies'
 
 const TaskDashboard = () => {
     const userEmail = Cookies.get(CookieName.EMAIL)

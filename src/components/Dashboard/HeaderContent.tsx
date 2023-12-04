@@ -2,8 +2,8 @@ import { Avatar, Menu, Text, Group } from '@mantine/core'
 import { Logo } from './Logo';
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
-import { Paths } from '../routes/paths'
-import { CookieName } from '../lib/constants/cookies'
+import { Paths } from '../../routes/paths'
+import { CookieName } from '../../lib/constants/cookies'
 
 export const HeaderContent = () => {
 
