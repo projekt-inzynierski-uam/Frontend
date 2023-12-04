@@ -3,7 +3,7 @@ import TodayTasks from './TodayTasks'
 import IncomingTasks from './IncomingTasks'
 import ActiveObjective from './ActiveObjective'
 import Cookies from 'js-cookie'
-import { CookieName } from '../lib/constants/cookies'
+import { CookieName } from '../../lib/constants/cookies'
 
 const TaskDashboard = () => {
     const userEmail = Cookies.get(CookieName.EMAIL)
