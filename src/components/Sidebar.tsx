@@ -25,8 +25,8 @@ export const Sidebar = () => {
           <Center>
             <Title order={1} c="white" ff="Oswald">Zadania</Title>
           </Center>
-          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Panel'} icon={PanelIcon}/>
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zarządzanie zadaniami'} icon={ZadaniaIcon}/>
+          <RedirectButton path={Paths.DASHBOARD_DTASKS} name={'Panel'} icon={PanelIcon}/>
+          <RedirectButton path={Paths.DASHBOARD_TASKMANAGER} name={'Zarządzanie zadaniami'} icon={ZadaniaIcon}/>
           <RedirectButton path={Paths.DASHBOARD_OBJECTIVES} name={'Zarządzanie celami'} icon={CeleIcon}/>
         </Flex>
         <Divider size="lg"/>
@@ -40,7 +40,7 @@ export const Sidebar = () => {
           <Center>
             <Title order={1} c="white" ff="Oswald">Grupy</Title>
           </Center>
-          <RedirectButton path={Paths.DASHBOARD_TASKS} name={'Zadania'} icon={""}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zadania'} icon={""}/>
           <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} icon={""}/>
           <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} icon={""}/>
         </Flex>
