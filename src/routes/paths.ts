@@ -8,5 +8,6 @@ export const Paths = {
   DASHBOARD_GROUPS: '/dashboard/grupy',
   DASHBOARD_GROUP_TASKS: '/dashboard/grupy/:id',
   DASHBOARD_SETTINGS: '/dashboard/ustawienia/',
-  DASHBOARD_OBJECTIVES: '/dashboard/cele'
+  DASHBOARD_OBJECTIVES: '/dashboard/cele',
+  DASHBOARD_TASKMANAGER: '/dashboard/zadania2'
 } as const
