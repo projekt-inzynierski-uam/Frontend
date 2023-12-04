@@ -2,7 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, TextInput, NumberInput, Button} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-const CreateObjectiveModal = () => {
+const CreateObjectiveModal = ({email}) => {
 
     const form = useForm({
         initialValues: {
@@ -12,16 +12,28 @@ const CreateObjectiveModal = () => {
         },
     
         validate: {
-          title: (value) => (value.length < 25 ? 'Maksymalna długość tytułu to 25 znaków': null)
+          title: (value) => (value.length > 25 || value.length < 1 ? 'Zła długość tutyłu': null),
         },
     });
 
     const [opened, { open, close }] = useDisclosure(false);
 
+    const createObjective = async (data) => {
+        try {
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/createobjective`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+        } catch (err) {
+          console.error(err)
+        }
+      }
+
     return (
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowy cel" centered>
-                <form onSubmit={form.onSubmit((values) => console.log(values))}>
+                <form onSubmit={form.onSubmit((values) => createObjective({...values, email}))}>
                     <TextInput
                         withAsterisk
                         label="Tytuł"
@@ -41,7 +53,7 @@ const CreateObjectiveModal = () => {
                         max={99}
                         {...form.getInputProps('max_points')}
                     />
-                    <Button type="submit">Wyślij</Button>
+                    <Button onClick={close} type="submit">Wyślij</Button>
                 </form>
             </Modal>
 
