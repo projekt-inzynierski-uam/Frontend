@@ -1,5 +1,5 @@
 import { useId, useState } from 'react'
-import '../../styles/Login.css'
+import '../../styles/LoginRegister.css'
 import { useNavigate, Link } from 'react-router-dom'
 import { Button, TextInput, PasswordInput, Paper, Stack, Text } from '@mantine/core'
 import { useForm } from '@mantine/form'

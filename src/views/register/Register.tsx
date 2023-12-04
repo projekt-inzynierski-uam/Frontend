@@ -5,7 +5,7 @@ import { useForm } from '@mantine/form'
 import { Paths } from '../../routes/paths'
 import { toast } from 'react-toastify'
 
-import '../../styles/Register.css'
+import '../../styles/LoginRegister.css'
 
 const ENDPOINT = `${import.meta.env.VITE_DBSERVER}/signup`
 
