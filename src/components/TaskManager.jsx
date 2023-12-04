@@ -1,9 +1,9 @@
 import { Grid, Flex, Center, Title, ScrollArea } from '@mantine/core'
 import { useState } from 'react';
 import { DatePicker } from '@mantine/dates';
-import CreateTaskModal from '../modals/CreateTaskModal';
+import CreateTaskModal from './modals/CreateTaskModal';
 import Cookies from 'js-cookie'
-import { CookieName } from '../../lib/constants/cookies'
+import { CookieName } from '../lib/constants/cookies'
 
 const TaskManager = () => {
     const [value, setValue] = useState([])

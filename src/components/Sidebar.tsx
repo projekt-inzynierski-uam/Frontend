@@ -1,9 +1,9 @@
 import { RedirectButton } from './RedirectButton'
-import { Paths } from '../../routes/paths'
+import { Paths } from '../routes/paths'
 import { Flex, Center, Divider, Title } from '@mantine/core'
-import PanelIcon from '../../assets/panelicon.svg'
-import ZadaniaIcon from '../../assets/menedzerzadan.svg'
-import CeleIcon from '../../assets/cele.svg'
+import PanelIcon from '../assets/panelicon.svg'
+import ZadaniaIcon from '../assets/menedzerzadan.svg'
+import CeleIcon from '../assets/cele.svg'
 
 export const Sidebar = () => {
   return (
