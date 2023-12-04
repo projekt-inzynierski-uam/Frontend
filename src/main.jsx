@@ -23,9 +23,9 @@ const theme = createTheme({
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <MantineProvider theme={theme}>
-      <App />
-    </MantineProvider>
-  </StrictMode>,
+    <StrictMode>
+      <MantineProvider theme={theme}>
+        <App />
+      </MantineProvider>
+    </StrictMode>
 )
