@@ -1,9 +1,9 @@
 import {Flex, ScrollArea, Title, Center, Button, Modal} from '@mantine/core'
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
-import { CookieName } from '../../lib/constants/cookies'
+import { CookieName } from '../lib/constants/cookies'
 import UnfinishedObjectiveItem from './UnfinishedObjectiveItem'
-import CreateObjectiveModal from '../modals/CreateObjectiveModal'
+import CreateObjectiveModal from './modals/CreateObjectiveModal'
 
 const UnfinishedObjectives = () => {
     const [unfinishedObjectives, setUnfinishedObjectives] = useState(null)

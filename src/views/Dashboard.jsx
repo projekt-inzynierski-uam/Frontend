@@ -1,8 +1,9 @@
-import { Sidebar } from '../components/Dashboard/Sidebar'
+import { Sidebar } from '../components/Sidebar'
 import { Outlet } from 'react-router-dom'
-import { HeaderContent } from '../components/Dashboard/HeaderContent'
+import { HeaderContent } from '../components/HeaderContent'
+
 import { useDisclosure } from '@mantine/hooks'
-import { AppShell, Group, Burger } from '@mantine/core'
+import { AppShell, Group, Burger, Avatar } from '@mantine/core'
 
 const Dashboard = () => {
   const [opened, { toggle }] = useDisclosure()

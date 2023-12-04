@@ -1,7 +1,7 @@
 import {Flex, ScrollArea, Title, Center, Button, Modal} from '@mantine/core'
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
-import { CookieName } from '../../lib/constants/cookies'
+import { CookieName } from '../lib/constants/cookies'
 import FinishedObjectiveItem from './FinishedObjectiveItem'
 
 const FinishedObjectives = () => {
