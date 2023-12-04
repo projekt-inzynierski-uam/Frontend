@@ -10,6 +10,7 @@ import Tasks from '../components/Tasks'
 import Settings from '../components/Settings'
 import { Groups } from '../components/groups'
 import { GroupTasks } from '../components/groups/components/GroupTasks'
+import ObjectiveList from '../components/ObjectiveList'
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Tasks />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_OBJECTIVES,
+        element: (
+          <ProtectedRoute>
+            <ObjectiveList />
           </ProtectedRoute>
         ),
       },

@@ -29,8 +29,8 @@ const Dashboard = () => {
           <HeaderContent />
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar p="md" bg="#E98074" style={{ borderRadius: '20px' }}>
-        <Sidebar />
+      <AppShell.Navbar p="md" bg="#E98074" style={{ borderRadius: "20px" }}>
+        <Sidebar/>
       </AppShell.Navbar>
       <AppShell.Main bg="#FFF5F3">
         <Outlet />

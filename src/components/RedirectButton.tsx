@@ -13,7 +13,7 @@ const anchorStyles = {
 
 export const RedirectButton = ({ path, name, icon }: Props) => {
   return (
-    <Box w="100%" ta="center" style={{ border: '1px solid #E85A4F', borderRadius: '20px' }}>
+    <Box w="100%" ta="center" style={{border: "1px solid #E85A4F", borderRadius:"20px"}}>
       <Link to={path} style={anchorStyles}>
         <Group justify="center">
           <Image src={icon} fit="contain" height={23} />
