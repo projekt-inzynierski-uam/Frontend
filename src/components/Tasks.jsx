@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
-
 import ListItem from './ListItem'
 import ListHeader from './ListHeader'
 import { CookieName } from '../lib/constants/cookies'

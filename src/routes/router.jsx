@@ -6,11 +6,11 @@ import { Register } from '../views/register/Register'
 
 import HomePage from '../views/HomePage'
 import Dashboard from '../views/Dashboard'
-import Tasks from '../components/Tasks'
 import Settings from '../components/Settings'
 import { Groups } from '../components/groups'
 import { GroupTasks } from '../components/groups/components/GroupTasks'
 import ObjectiveList from '../components/ObjectiveList'
+import TaskDashboard from '../components/TaskDashboard'
 
 export const router = createBrowserRouter([
   {
@@ -34,10 +34,10 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: Paths.DASHBOARD_TASKS,
+        path: Paths.DASHBOARD_DTASKS,
         element: (
           <ProtectedRoute>
-            <Tasks />
+            <TaskDashboard />
           </ProtectedRoute>
         ),
       },
