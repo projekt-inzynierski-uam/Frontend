@@ -14,7 +14,6 @@ const UnfinishedObjectives = () => {
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/unfinishedobjectives/${userEmail}`)
           const json = await response.json()
           setUnfinishedObjectives(json)
-          console.log(json)
         } catch (err) {
           console.error(err)
         }

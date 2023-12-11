@@ -1,19 +1,17 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, TextInput, Button} from '@mantine/core';
+import { Modal, TextInput, Button, NumberInput} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import { DateInput } from '@mantine/dates';
 
 const CreateTaskModal = ({email}) => {
 
-    const [datestart, setDateStart] = useState(null);
     const [dateend, setDateEnd] = useState(null);
 
     const form = useForm({
         initialValues: {
           title: '',
-          startdate: datestart,
-          enddate: dateend
+          points: 0
         },
     
         validate: {
@@ -38,23 +36,25 @@ const CreateTaskModal = ({email}) => {
     return (
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowe zadanie" centered>
-                <form onSubmit={form.onSubmit((values) => createTask({...values, email, datestart, dateend}))}>
+                <form onSubmit={form.onSubmit((values) => createTask({...values, email, dateend}))}>
                     <TextInput
                         withAsterisk
                         label="Tytuł"
                         {...form.getInputProps('title')}
                     />
-                    <DateInput
-                        value={datestart}
-                        onChange={setDateStart}
-                        valueFormat="DD-MM-YYYY"
-                        label="Data rozpoczecia"
+                    <NumberInput
+                        withAsterisk
+                        label="Ilość punktów za zadanie"
+                        min={0}
+                        max={99}
+                        {...form.getInputProps('points')}
                     />
                     <DateInput
+                        withAsterisk
                         value={dateend}
                         onChange={setDateEnd}
                         valueFormat="DD-MM-YYYY"
-                        label="Data zakończenia"
+                        label="Data rozpoczecia"
                     />
                     <Button onClick={close} type="submit">Wyślij</Button>
                 </form>
@@ -62,6 +62,7 @@ const CreateTaskModal = ({email}) => {
 
             <Button onClick={() => {
                 open(),
+                setDateEnd(null)
                 form.reset()
             }} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Dodaj nowe zadanie</Button>
         </>
