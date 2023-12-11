@@ -7,8 +7,8 @@ const UnfinishedObjectiveItem = ({objective, getData}) => {
 
     const deleteObjective = async () => {
         try{
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/deleteobjective/${objective.id}`,{
-            method: 'DELETE',
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/editobjectivetofinished/${objective.id}`,{
+            method: 'PUT',
         })
         if(response.status === 200){
             getData()
