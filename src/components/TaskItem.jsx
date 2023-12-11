@@ -24,7 +24,7 @@ const TaskItem = ({task}) => {
               body: JSON.stringify(data),
           })
           if(response.status === 200){
-            DeleteTask
+            DeleteTask()
           }
           }catch(err){
             console.error(err)
