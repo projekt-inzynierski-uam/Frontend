@@ -1,8 +1,9 @@
 import { StrictMode } from 'react'
+import 'dayjs/locale/pl';
 import ReactDOM from 'react-dom/client'
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
-
+import { DatesProvider } from '@mantine/dates';
 import App from './App'
 import { MantineProvider, createTheme, rem } from '@mantine/core';
 
@@ -26,7 +27,9 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById('root')).render(
     <StrictMode>
       <MantineProvider theme={theme}>
-        <App />
+        <DatesProvider settings={{ locale: 'pl', timezone: 'CET'}}>
+          <App />
+        </DatesProvider>
       </MantineProvider>
     </StrictMode>
 )
