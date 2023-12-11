@@ -93,6 +93,7 @@ const EditActiveObjectiveModal = ({userEmail}) => {
 
             <Button onClick={() => {
                 open(),
+                setValue(null)
                 form.reset()
             }} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Zmień cel</Button>
         </>

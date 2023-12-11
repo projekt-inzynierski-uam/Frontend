@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: Paths.DASHBOARD_DTASKS,
+        path: Paths.DASHBOARD_MAIN,
         element: (
           <ProtectedRoute>
             <TaskDashboard />
@@ -43,18 +43,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: Paths.DASHBOARD_TASKMANAGER,
+        path: Paths.DASHBOARD_TASKS,
         element: (
           <ProtectedRoute>
             <TaskManager />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: Paths.DASHBOARD_OBJECTIVES,
-        element: (
-          <ProtectedRoute>
-            <ObjectiveList />
           </ProtectedRoute>
         ),
       },
