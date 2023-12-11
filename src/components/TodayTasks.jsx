@@ -21,7 +21,6 @@ const TodayTasks = () => {
     useEffect(() => {
         getData()
     }, [])
-
     return(
         <>
             <Center>

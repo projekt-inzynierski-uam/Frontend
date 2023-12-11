@@ -24,7 +24,6 @@ const TaskManager = () => {
     useEffect(() => {
         getData()
     }, [])
-
     return(
         <>
             <Grid>

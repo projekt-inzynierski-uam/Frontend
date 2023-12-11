@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { DateInput } from '@mantine/dates';
 
 const CreateTaskModal = ({email}) => {
-
     const [dateend, setDateEnd] = useState(null);
 
     const form = useForm({

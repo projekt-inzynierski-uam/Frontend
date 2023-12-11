@@ -22,7 +22,7 @@ const ActiveObjective = ({email}) => {
     useEffect(() => {
         getData()
     }, [])
-
+    
     return(
         <>
             <Flex
