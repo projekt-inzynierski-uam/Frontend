@@ -21,7 +21,7 @@ const UnfinishedObjectives = () => {
     
     useEffect(() => {
         getData()
-    }, [])
+    }, [unfinishedObjectives])
 
     return (
         <>
