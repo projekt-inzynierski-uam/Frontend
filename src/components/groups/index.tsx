@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import { toast } from 'react-toastify'
 import Cookies from 'js-cookie'
 
+import { CreateGroup } from './components/CreateGroup'
 import { JoinGroup } from './components/JoinGroup'
 import { GroupListItem } from './components/GroupListItem'
 import { CookieName } from '../../lib/constants/cookies'
@@ -36,6 +37,7 @@ export const Groups = () => {
   return (
     <>
       <div>
+        <CreateGroup setGroups={setGroups} />
         <JoinGroup setGroups={setGroups} />
       </div>
       <div className={styles.GroupsList}>
