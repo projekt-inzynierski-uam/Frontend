@@ -7,7 +7,8 @@ import { Register } from '../views/register/Register'
 import HomePage from '../views/HomePage'
 import Dashboard from '../views/Dashboard'
 import Settings from '../components/Settings'
-import { Groups } from '../components/groups'
+import MyGroups from '../components/MyGroups'
+import Invites from '../components/Invites'
 import { GroupTasks } from '../components/groups/components/GroupTasks'
 import ObjectiveList from '../components/ObjectiveList'
 import TaskDashboard from '../components/TaskDashboard'
@@ -62,7 +63,15 @@ export const router = createBrowserRouter([
         path: Paths.DASHBOARD_GROUPS,
         element: (
           <ProtectedRoute>
-            <Groups />
+            <MyGroups />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_INVITES,
+        element: (
+          <ProtectedRoute>
+            <Invites />
           </ProtectedRoute>
         ),
       },
