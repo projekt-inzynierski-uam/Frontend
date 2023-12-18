@@ -3,16 +3,16 @@ import { ProtectedRoute } from '../routes/components/ProtectedRoute'
 import { Paths } from './paths'
 import { Login } from '../views/login/Login'
 import { Register } from '../views/register/Register'
-
 import HomePage from '../views/HomePage'
 import Dashboard from '../views/Dashboard'
 import Settings from '../components/Settings'
 import MyGroups from '../components/MyGroups'
 import Invites from '../components/Invites'
-import { GroupTasks } from '../components/groups/components/GroupTasks'
 import ObjectiveList from '../components/ObjectiveList'
 import TaskDashboard from '../components/TaskDashboard'
 import TaskManager from '../components/TaskManager'
+import GroupDashboard from '../components/GroupDashboard'
+import GroupUsers from '../components/GroupUsers'
 
 export const router = createBrowserRouter([
   {
@@ -76,10 +76,18 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: Paths.DASHBOARD_GROUP_TASKS,
+        path: Paths.DASHBOARD_GROUP_DASHBOARD,
         element: (
           <ProtectedRoute>
-            <GroupTasks />
+            <GroupDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_GROUP_USERS,
+        element: (
+          <ProtectedRoute>
+            <GroupUsers />
           </ProtectedRoute>
         ),
       },
