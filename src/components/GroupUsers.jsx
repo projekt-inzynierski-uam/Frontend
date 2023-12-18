@@ -39,7 +39,7 @@ const GroupUsers = () => {
                 >
                     <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
                         {users?.map((user) => (
-                            <GroupUserItem key={user.email} user={user}/>
+                            <GroupUserItem key={user.email} groupId={groupId} user={user}/>
                         ))}
                     </ScrollArea>
                 </Flex>
