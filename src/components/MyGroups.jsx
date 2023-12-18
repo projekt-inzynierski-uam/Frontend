@@ -1,4 +1,4 @@
-import { Center, Flex, ScrollArea } from '@mantine/core'
+import { Center, Flex } from '@mantine/core'
 import CreateGroup from './modals/CreateGroup'
 import { useState, useEffect } from 'react'
 import GroupItem from './GroupItem'

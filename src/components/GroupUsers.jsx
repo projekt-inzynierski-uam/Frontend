@@ -1,10 +1,13 @@
 import { Flex, ScrollArea, Title, Center } from '@mantine/core'
+import { useLocation } from 'react-router-dom'
 
-const Invites = () => {
-    return (
+const GroupUsers = () => {
+    const location = useLocation()
+    const { groupName } = location.state
+    return(
         <>
             <Center>
-                <Title order={2} ff={"Oswald"} c='#8E8D8A'>Zaproszenia do Grup</Title>
+                <Title order={2} ff={"Oswald"} c='#8E8D8A'>Lista użytkowników grupy "{groupName}"</Title>
             </Center>
             <Center>
                 <Flex
@@ -25,4 +28,4 @@ const Invites = () => {
     )
 }
 
-export default Invites
+export default GroupUsers
