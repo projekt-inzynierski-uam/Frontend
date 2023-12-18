@@ -43,7 +43,6 @@ const UnfinishedObjectives = () => {
                 </ScrollArea>
             </Flex>
             <Center>
-                
                 <CreateObjectiveModal email={userEmail}/>
             </Center>
         </>
