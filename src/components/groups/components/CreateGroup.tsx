@@ -13,7 +13,7 @@ type Props = {
   setGroups: React.Dispatch<React.SetStateAction<Group[] | undefined>>
 }
 
-const CreateGroup = ({ setGroups }: Props) => {
+export const CreateGroup = ({ setGroups }: Props) => {
   const [opened, { open, close }] = useDisclosure(false)
 
   const [formValues, setFormValues] = useState<FormValues>({
@@ -79,5 +79,3 @@ const CreateGroup = ({ setGroups }: Props) => {
     </>
   )
 }
-
-export default CreateGroup

@@ -40,8 +40,9 @@ export const Sidebar = () => {
           <Center>
             <Title order={1} c="white" ff="Oswald">Grupy</Title>
           </Center>
-          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Moje grupy'} icon={CeleIcon}/>
-          <RedirectButton path={Paths.DASHBOARD_INVITES} name={'Zaproszenia'} icon={CeleIcon}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Zadania'} icon={""}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} icon={""}/>
+          <RedirectButton path={Paths.DASHBOARD_GROUPS} name={'Grupy'} icon={""}/>
         </Flex>
       </Flex>
     </>
