@@ -89,20 +89,22 @@ const GroupDashboard = () => {
                 </Link>
                 </Flex>
             </Flex>   
-            <Center>
-            <Button w="50%" h="160px" style={{borderRadius:"20px"}} bg="#8E8D8A">
-                <Flex 
-                    c="#FFF5F3" 
-                    ff={"Oswald"}
-                    direction="column"
-                    gap="xl"
-                >
-                    <Center w="100%" h="100%"> 
-                        <Text size="xl">Ustawienia</Text>
+                <Link to={`/dashboard/grupy/${groupId}/ustawienia`} state={{groupId: groupId}} style={{width:"100%"}}>
+                <Center>
+                    <Button w="50%" h="160px" style={{borderRadius:"20px"}} bg="#8E8D8A">
+                        <Flex 
+                            c="#FFF5F3" 
+                            ff={"Oswald"}
+                            direction="column"
+                            gap="xl"
+                        >
+                            <Center w="100%" h="100%"> 
+                                <Text size="xl">Ustawienia</Text>
+                            </Center>
+                        </Flex>
+                    </Button>
                     </Center>
-                </Flex>
-        </Button>
-        </Center>
+                </Link>
         </>
     )
 }
