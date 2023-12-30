@@ -1,26 +1,7 @@
-import {Flex, ScrollArea, Title, Center, Button, Modal} from '@mantine/core'
-import { useState, useEffect } from 'react'
-import Cookies from 'js-cookie'
-import { CookieName } from '../lib/constants/cookies'
+import {Flex, ScrollArea, Title, Center} from '@mantine/core'
 import FinishedObjectiveItem from './FinishedObjectiveItem'
 
-const FinishedObjectives = () => {
-    const [finishedObjectives, setfinishedObjectives] = useState(null)
-    const userEmail = Cookies.get(CookieName.EMAIL)
-
-    const getData = async () => {
-        try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/finishedobjectives/${userEmail}`)
-          const json = await response.json()
-          setfinishedObjectives(json)
-        } catch (err) {
-          console.error(err)
-        }
-    }
-    
-    useEffect(() => {
-        getData()
-    }, [])
+const FinishedObjectives = ({finishedObjectives, getData}) => {
 
     return (
         <>

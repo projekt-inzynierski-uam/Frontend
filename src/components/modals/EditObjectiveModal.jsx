@@ -2,7 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, TextInput, NumberInput, Button} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-const EditObjectiveModal = ({objective}) => {
+const EditObjectiveModal = ({objective, getData}) => {
 
     const form = useForm({
         initialValues: {
@@ -25,6 +25,7 @@ const EditObjectiveModal = ({objective}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
+          getData()
         } catch (err) {
           console.error(err)
         }

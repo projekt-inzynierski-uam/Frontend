@@ -26,7 +26,7 @@ const MyGroups = () => {
     return(
         <>
             <Center>
-                <CreateGroup email={userEmail}/>
+                <CreateGroup email={userEmail} getData={getData}/>
             </Center>
             <Flex
                 direction="row"

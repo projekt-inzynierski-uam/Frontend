@@ -2,7 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, TextInput, Button} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-const CreateGroup = ({email}) => {
+const CreateGroup = ({email, getData}) => {
 
     const [opened, { open, close }] = useDisclosure(false);
 
@@ -23,6 +23,7 @@ const CreateGroup = ({email}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
+          getData()
         } catch (err) {
           console.error(err)
         }
