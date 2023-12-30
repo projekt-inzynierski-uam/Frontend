@@ -37,7 +37,7 @@ const UnfinishedObjectiveItem = ({objective, getData}) => {
                         <Text>{objective.current_points}/{objective.max_points}</Text>
                     </Group>
                 </Group>
-                <EditObjectiveModal objective={objective}/>
+                <EditObjectiveModal objective={objective} getData={getData}/>
                 <Button onClick={deleteObjective} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>
             </Flex>
         </>

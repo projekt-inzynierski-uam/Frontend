@@ -41,7 +41,7 @@ const ActiveObjective = ({email}) => {
                             <Text>{activeObjective[0].current_points}/{activeObjective[0].max_points}</Text>
                         </Group>
                     </Group>
-                    <EditActiveObjectiveModal userEmail={email}/>
+                    <EditActiveObjectiveModal userEmail={email} getData={getData}/>
                 </Group>
             </Flex>
         </>

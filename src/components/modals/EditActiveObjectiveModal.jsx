@@ -3,7 +3,7 @@ import { Modal, Button, Combobox, useCombobox, InputBase, Input, ScrollArea } fr
 import { useForm } from '@mantine/form';
 import { useState, useEffect } from 'react';
 
-const EditActiveObjectiveModal = ({userEmail}) => {
+const EditActiveObjectiveModal = ({userEmail, getData}) => {
 
     const [unfinishedObjectives, setUnfinishedObjectives] = useState([])
     const [opened, { open, close }] = useDisclosure(false);
@@ -20,7 +20,7 @@ const EditActiveObjectiveModal = ({userEmail}) => {
     });
 
 
-    const getData = async () => {
+    const getObjectives = async () => {
         try {
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/unfinishedobjectives/${userEmail}`)
           const json = await response.json()
@@ -31,7 +31,7 @@ const EditActiveObjectiveModal = ({userEmail}) => {
     }
 
     useEffect(() => {
-        getData()
+        getObjectives()
     }, [])
 
     const editActiveObjective = async (data) => {
@@ -41,6 +41,7 @@ const EditActiveObjectiveModal = ({userEmail}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
+          getData()
         } catch (err) {
           console.error(err)
         }

@@ -1,27 +1,9 @@
-import {Flex, ScrollArea, Title, Center, Button, Modal} from '@mantine/core'
-import { useState, useEffect } from 'react'
-import Cookies from 'js-cookie'
-import { CookieName } from '../lib/constants/cookies'
+import {Flex, ScrollArea, Title, Center} from '@mantine/core'
 import UnfinishedObjectiveItem from './UnfinishedObjectiveItem'
 import CreateObjectiveModal from './modals/CreateObjectiveModal'
 
-const UnfinishedObjectives = () => {
-    const [unfinishedObjectives, setUnfinishedObjectives] = useState(null)
-    const userEmail = Cookies.get(CookieName.EMAIL)
+const UnfinishedObjectives = ({unfinishedObjectives, userEmail, getData}) => {
 
-    const getData = async () => {
-        try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/unfinishedobjectives/${userEmail}`)
-          const json = await response.json()
-          setUnfinishedObjectives(json)
-        } catch (err) {
-          console.error(err)
-        }
-    }
-    
-    useEffect(() => {
-        getData()
-    }, [])
 
     return (
         <>
@@ -43,7 +25,7 @@ const UnfinishedObjectives = () => {
                 </ScrollArea>
             </Flex>
             <Center>
-                <CreateObjectiveModal email={userEmail}/>
+                <CreateObjectiveModal email={userEmail} getData={getData}/>
             </Center>
         </>
     )
