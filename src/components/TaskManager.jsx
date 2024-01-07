@@ -21,11 +21,25 @@ const TaskManager = () => {
         }
     }
 
+    const sendData = async () => {
+        let values = {dates: value}
+        try {
+            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/dates`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(values)
+            })
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
     useEffect(() => {
         getData()
     }, [])
     return(
         <>
+        {console.log(value)}
             <Grid>
                 <Grid.Col span={6}>
                     <Flex
@@ -33,7 +47,7 @@ const TaskManager = () => {
                         justify="center"
                         align="center"
                     >
-                        <DatePicker type="multiple" value={value} onChange={() => {setValue()}} size='lg'/>
+                        <DatePicker type="multiple" value={value} onChange={setValue} onClick={sendData} size='lg'/>
                     </Flex>
                 </Grid.Col>
                 <Grid.Col span={6}>
@@ -50,12 +64,12 @@ const TaskManager = () => {
                     >
                     <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
                         {tasks?.map((task) => (
-                            <TaskItem key={task.id} task={task}/>
+                            <TaskItem key={task.id} task={task} getData={getData}/>
                         ))}
                     </ScrollArea>
                     </Flex>
                     <Center>
-                        <CreateTaskModal email={userEmail}/>
+                        <CreateTaskModal email={userEmail} getData={getData}/>
                     </Center>
                 </Grid.Col>
             </Grid>

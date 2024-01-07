@@ -39,7 +39,7 @@ const Invites = () => {
                 >
                     <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
                         {invites?.map((invite) => (
-                            <InviteItem key={invite.id} group={invite} email={userEmail}/>
+                            <InviteItem key={invite.id} group={invite} email={userEmail} getData={getData}/>
                         ))}
                     </ScrollArea>
                 </Flex>

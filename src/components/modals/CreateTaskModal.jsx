@@ -4,7 +4,7 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import { DateInput } from '@mantine/dates';
 
-const CreateTaskModal = ({email}) => {
+const CreateTaskModal = ({email, getData}) => {
     const [dateend, setDateEnd] = useState(null);
 
     const form = useForm({
@@ -27,6 +27,7 @@ const CreateTaskModal = ({email}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
+          getData()
         } catch (err) {
           console.error(err)
         }
