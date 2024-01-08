@@ -96,6 +96,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: Paths.DASHBOARD_GROUP_TASKS,
+        element: (
+          <ProtectedRoute>
+            <GroupTasks />
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: Paths.DASHBOARD_GROUP_OBJECTIVES,
         element: (
           <ProtectedRoute>
