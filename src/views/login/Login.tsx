@@ -63,6 +63,7 @@ export const Login = () => {
       toast.success('Zalogowano')
     } catch (error) {
       console.error(error)
+      toast.error('Bledny login')
     } finally {
       setIsLoading(false)
     }

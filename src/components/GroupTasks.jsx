@@ -1,19 +1,26 @@
 import { Grid, Flex, Center, Title, ScrollArea } from '@mantine/core'
 import { useState, useEffect } from 'react';
 import { DatePicker } from '@mantine/dates';
-import CreateTaskModal from './modals/CreateTaskModal';
+import CreateTaskGroupModal from './modals/CreateTaskGroupModal';
 import Cookies from 'js-cookie'
 import { CookieName } from '../lib/constants/cookies'
 import TaskItem from './TaskItem';
+import { useLocation } from 'react-router-dom'
 
-const TaskManager = () => {
+const GroupTasks = () => {
     const [value, setValue] = useState([])
     const [tasks, setTasks] = useState([])
     const userEmail = Cookies.get(CookieName.EMAIL)
+    const location = useLocation()
+    const { groupId } = location.state
 
-    const getData = async () => {
+    const getData = async (data) => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/gettasks/${userEmail}`)
+            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/gettasksgroup`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            })
           const json = await response.json()
           setTasks(json)
         } catch (err) {
@@ -21,25 +28,12 @@ const TaskManager = () => {
         }
     }
 
-    const sendData = async () => {
-        let values = {dates: value}
-        try {
-            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/dates`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(values)
-            })
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
     useEffect(() => {
-        getData()
+        getData({userEmail: userEmail, groupId: groupId})
     }, [])
+
     return(
         <>
-        {console.log(value)}
             <Grid>
                 <Grid.Col span={6}>
                     <Flex
@@ -47,7 +41,7 @@ const TaskManager = () => {
                         justify="center"
                         align="center"
                     >
-                        <DatePicker type="multiple" value={value} onChange={setValue} onClick={sendData} size='lg'/>
+                        <DatePicker type="multiple" value={value} onChange={setValue} size='lg'/>
                     </Flex>
                 </Grid.Col>
                 <Grid.Col span={6}>
@@ -69,7 +63,7 @@ const TaskManager = () => {
                     </ScrollArea>
                     </Flex>
                     <Center>
-                        <CreateTaskModal email={userEmail} getData={getData}/>
+                        <CreateTaskGroupModal groupId={groupId} getData={getData}/>
                     </Center>
                 </Grid.Col>
             </Grid>
@@ -77,4 +71,4 @@ const TaskManager = () => {
     )
 }
 
-export default TaskManager
+export default GroupTasks

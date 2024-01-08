@@ -5,7 +5,7 @@ import ActiveObjective from './ActiveObjective'
 import Cookies from 'js-cookie'
 import { CookieName } from '../lib/constants/cookies'
 
-const TaskDashboard = () => {
+const GroupPanel = () => {
     const userEmail = Cookies.get(CookieName.EMAIL)
     return(
         <>
@@ -26,4 +26,4 @@ const TaskDashboard = () => {
     )
 }
 
-export default TaskDashboard
+export default GroupPanel

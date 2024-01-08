@@ -14,6 +14,9 @@ import TaskManager from '../components/TaskManager'
 import GroupDashboard from '../components/GroupDashboard'
 import GroupUsers from '../components/GroupUsers'
 import GroupSettings from '../components/GroupSettings'
+import GroupTasks from '../components/GroupTasks'
+import GroupObjectives from '../components/GroupObjectives'
+import GroupPanel from '../components/GroupPanel'
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +84,30 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <GroupDashboard />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_GROUP_PANEL,
+        element: (
+          <ProtectedRoute>
+            <GroupPanel />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_GROUP_OBJECTIVES,
+        element: (
+          <ProtectedRoute>
+            <GroupObjectives />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_GROUP_SETTINGS,
+        element: (
+          <ProtectedRoute>
+            <GroupSettings />
           </ProtectedRoute>
         ),
       },

@@ -1,7 +1,6 @@
 import { Group, Flex, Text, Button } from "@mantine/core"
 
-const InviteItem = ({group, email}) => {
-
+const InviteItem = ({group, email, getData}) => {
     const AcceptInvite = async () => {
         try{
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/acceptinvite/`,{
@@ -9,6 +8,7 @@ const InviteItem = ({group, email}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({groupId: group.id, email: email}),
         })
+        getData()
         }catch(err){
           console.error(err)
         }
@@ -21,6 +21,7 @@ const InviteItem = ({group, email}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({groupId: group.id, email: email}),
         })
+        getData()
         }catch(err){
           console.error(err)
         }

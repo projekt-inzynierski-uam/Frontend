@@ -1,8 +1,8 @@
 import {Flex, ScrollArea, Title, Center} from '@mantine/core'
 import UnfinishedObjectiveItem from './UnfinishedObjectiveItem'
-import CreateObjectiveModal from './modals/CreateObjectiveModal'
+import CreateObjectiveModalGroup from './modals/CreateObjectiveModalGroup'
 
-const UnfinishedObjectives = ({unfinishedObjectives, userEmail, getData}) => {
+const UnfinishedObjectivesGroup = ({unfinishedObjectives, getData, groupId}) => {
 
 
     return (
@@ -25,10 +25,10 @@ const UnfinishedObjectives = ({unfinishedObjectives, userEmail, getData}) => {
                 </ScrollArea>
             </Flex>
             <Center>
-                <CreateObjectiveModal email={userEmail} getData={getData}/>
+                <CreateObjectiveModalGroup getData={getData} groupId={groupId}/>
             </Center>
         </>
     )
 }
 
-export default UnfinishedObjectives
+export default UnfinishedObjectivesGroup

@@ -2,7 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, TextInput, NumberInput, Button} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-const CreateObjectiveModal = ({email, getData}) => {
+const CreateObjectiveModalGroup = ({getData, groupId}) => {
 
     const form = useForm({
         initialValues: {
@@ -18,9 +18,9 @@ const CreateObjectiveModal = ({email, getData}) => {
 
     const [opened, { open, close }] = useDisclosure(false);
 
-    const createObjective = async (data) => {
+    const createObjectiveGroup = async (data) => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/createobjective`, {
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/createobjectivegroup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -34,7 +34,7 @@ const CreateObjectiveModal = ({email, getData}) => {
     return (
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowy cel" centered>
-                <form onSubmit={form.onSubmit((values) => createObjective({...values, email}))}>
+                <form onSubmit={form.onSubmit((values) => createObjectiveGroup({...values, groupId}))}>
                     <TextInput
                         withAsterisk
                         label="Tytuł"
@@ -66,4 +66,4 @@ const CreateObjectiveModal = ({email, getData}) => {
     )
 }
 
-export default CreateObjectiveModal
+export default CreateObjectiveModalGroup
