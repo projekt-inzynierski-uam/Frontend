@@ -11,5 +11,8 @@ export const Paths = {
   DASHBOARD_GROUP_SETTINGS: '/dashboard/grupy/:id/ustawienia',
   DASHBOARD_SETTINGS: '/dashboard/ustawienia/',
   DASHBOARD_OBJECTIVES: '/dashboard/cele',
-  DASHBOARD_TASKS: '/dashboard/zadania'
+  DASHBOARD_TASKS: '/dashboard/zadania',
+  DASHBOARD_GROUP_TASKS: '/dashboard/grupy/:id/zadania',
+  DASHBOARD_GROUP_OBJECTIVES: '/dashboard/grupy/:id/cele',
+  DASHBOARD_GROUP_PANEL: '/dashboard/grupy/:id/panel'
 } as const

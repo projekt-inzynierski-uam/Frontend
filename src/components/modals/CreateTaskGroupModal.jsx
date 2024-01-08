@@ -1,10 +1,10 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, TextInput, Button, NumberInput} from '@mantine/core';
+import { Modal, TextInput, Button, NumberInput, Combobox, useCombobox,InputBase,Input,ScrollArea} from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DateInput } from '@mantine/dates';
 
-const CreateTaskModal = ({email}) => {
+const CreateTaskGroupModal = ({groupId, userEmail}) => {
     const [dateend, setDateEnd] = useState(null);
 
     const form = useForm({
@@ -20,14 +20,13 @@ const CreateTaskModal = ({email}) => {
 
     const [opened, { open, close }] = useDisclosure(false);
 
-    const createTask= async (data) => {
+    const createTaskGroup = async (data) => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/createtask`, {
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/createtaskgroup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
-          getData()
         } catch (err) {
           console.error(err)
         }
@@ -36,7 +35,7 @@ const CreateTaskModal = ({email}) => {
     return (
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowe zadanie" centered>
-                <form onSubmit={form.onSubmit((values) => createTask({...values, email, dateend}))}>
+                <form onSubmit={form.onSubmit((values) => createTaskGroup({...values, email, dateend, userEmail, groupId}))}>
                     <TextInput
                         withAsterisk
                         label="Tytuł"
@@ -69,4 +68,4 @@ const CreateTaskModal = ({email}) => {
     )
 }
 
-export default CreateTaskModal
+export default CreateTaskGroupModal
