@@ -19,7 +19,7 @@ const GroupDashboard = () => {
                     direction="row"
                     w="100%"
                 >
-                <Link to={'/dashboard'} style={{width:"100%"}}>
+                <Link to={`/dashboard/grupy/${groupId}/panel`} state={{groupId: groupId}} style={{width:"100%"}}>
                         <Button w="95%" h="220px" style={{borderRadius:"20px"}} bg="#E98074">
                             <Flex 
                                 c="#FFF5F3" 
@@ -79,7 +79,7 @@ const GroupDashboard = () => {
                     direction="row"
                     w="100%"
                 >
-                <Link to={'/dashboard'} style={{width:"100%"}}>
+                <Link to={`/dashboard/grupy/${groupId}/cele`} state={{groupId: groupId}} style={{width:"100%"}}>
                         <Button w="95%" h="220px" style={{borderRadius:"20px"}} bg="#E98074">
                             <Flex 
                                 c="#FFF5F3" 
