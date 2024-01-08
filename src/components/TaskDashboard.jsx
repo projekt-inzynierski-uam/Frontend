@@ -11,9 +11,6 @@ const TaskDashboard = () => {
         <>
             <Grid grow>
                 <Grid.Col span={6}>
-                    <Center>
-                        <Title order={2} ff={"Oswald"} c='#8E8D8A'>12:25</Title>
-                    </Center>
                 </Grid.Col>
                 <Grid.Col span={6}>
                     <ActiveObjective email={userEmail}/>
