@@ -23,7 +23,6 @@ const GroupItem = ({group}) => {
                                 <Center w="100%" h="100%"> 
                                     <Text size="xl">{group.name}</Text>
                                 </Center>
-                                <Text ta="center" bg="#8E8D8A" w="100%" h="100%" style={{borderRadius:"10px"}}>Opis</Text>
                         </Flex>
                     </Button>
                 </Link>
