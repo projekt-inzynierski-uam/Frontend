@@ -25,13 +25,14 @@ export const Login = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const form = useForm({
+    validateInputOnChange: true,
     initialValues: {
       email: '',
       password: '',
     },
 
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Nieprawidłowy adres email'),
       password: (val) => (val.length <= 6 ? 'Hasło powinno zawierać przynajmniej 6 znaków' : null),
     },
   })
@@ -63,7 +64,7 @@ export const Login = () => {
       toast.success('Zalogowano')
     } catch (error) {
       console.error(error)
-      toast.error('Bledny login')
+      toast.error('Niepoprawne dane')
     } finally {
       setIsLoading(false)
     }
@@ -80,7 +81,7 @@ export const Login = () => {
               radius="lg"
               label="Adres email"
               id={emailInputId}
-              placeholder="janusz@gmail.com"
+              placeholder="Email"
               value={form.values.email}
               onChange={(event) => form.setFieldValue('email', event.target.value)}
               error={form.errors.email && 'Nieprawidłowy adres email'}
