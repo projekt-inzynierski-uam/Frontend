@@ -17,6 +17,7 @@ import GroupSettings from '../components/GroupSettings'
 import GroupTasks from '../components/GroupTasks'
 import GroupObjectives from '../components/GroupObjectives'
 import GroupPanel from '../components/GroupPanel'
+import Profil from '../components/profil'
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <TaskManager />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: Paths.DASHBOARD_PROFIL,
+        element: (
+          <ProtectedRoute>
+            <Profil />
           </ProtectedRoute>
         ),
       },

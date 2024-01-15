@@ -3,6 +3,7 @@ export const Paths = {
   LOGIN: '/login',
   REGISTER: '/register',
   DASHBOARD: '/dashboard',
+  DASHBOARD_PROFIL: '/dashboard/profil',
   DASHBOARD_MAIN: '/dashboard/panel',
   DASHBOARD_GROUPS: '/dashboard/grupy',
   DASHBOARD_INVITES: '/dashboard/zaproszenia',
