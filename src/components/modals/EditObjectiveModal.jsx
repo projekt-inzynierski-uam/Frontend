@@ -1,5 +1,5 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, TextInput, NumberInput, Button} from '@mantine/core';
+import { Modal, TextInput, NumberInput, Button, Text} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 const EditObjectiveModal = ({objective, getData}) => {
@@ -35,29 +35,29 @@ const EditObjectiveModal = ({objective, getData}) => {
         <>
             <Modal opened={opened} onClose={close} title="Edytuj cel" centered>
                 <form onSubmit={form.onSubmit((values) => editObjective({...values}))}>
+                    <Text size="20px">Tytuł</Text>
                     <TextInput
                         withAsterisk
-                        label="Tytuł"
                         placeholder={objective.title}
                         {...form.getInputProps('title')}
                     />
+                    <Text size="20px">Aktualna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
-                        label="Aktualna ilość punktów"
                         placeholder={objective.current_points}
                         min={0}
                         max={99}
                         {...form.getInputProps('current_points')}
                     />
+                    <Text size="20px">Maksymalna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
-                        label="Maksymalna ilość punktów"
                         placeholder={objective.max_points}
                         min={0}
                         max={99}
                         {...form.getInputProps('max_points')}
                     />
-                    <Button onClick={close} type="submit">Wyślij</Button>
+                    <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>
                 </form>
             </Modal>
 

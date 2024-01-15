@@ -1,7 +1,7 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, TextInput, Button, NumberInput, Combobox, useCombobox,InputBase,Input,ScrollArea} from '@mantine/core';
+import { Modal, TextInput, Button, NumberInput, Text} from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { DateInput } from '@mantine/dates';
 
 const CreateTaskGroupModal = ({groupId, userEmail}) => {
@@ -36,26 +36,26 @@ const CreateTaskGroupModal = ({groupId, userEmail}) => {
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowe zadanie" centered>
                 <form onSubmit={form.onSubmit((values) => createTaskGroup({...values, email, dateend, userEmail, groupId}))}>
+                  <Text size="20px">Tytuł</Text>
                     <TextInput
                         withAsterisk
-                        label="Tytuł"
                         {...form.getInputProps('title')}
                     />
+                    <Text size="20px">Ilość punktów za zadanie</Text>
                     <NumberInput
                         withAsterisk
-                        label="Ilość punktów za zadanie"
                         min={0}
                         max={99}
                         {...form.getInputProps('points')}
                     />
+                    <Text size="20px">Data rozpoczecia</Text>
                     <DateInput
                         withAsterisk
                         value={dateend}
                         onChange={setDateEnd}
                         valueFormat="DD-MM-YYYY"
-                        label="Data rozpoczecia"
                     />
-                    <Button onClick={close} type="submit">Wyślij</Button>
+                    <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>
                 </form>
             </Modal>
 

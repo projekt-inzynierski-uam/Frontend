@@ -30,7 +30,7 @@ const GroupUserItem = ({groupId, user}) => {
                 <Group c="#FFF5F3" bg="#E98074" w="100%"style={{borderRadius:"50px", height:"40px"}} ff={"Oswald"}>
                     <Text ta="center" pl="10px" size="lg" w="100%">{user.email}</Text>
                 </Group>
-                <Button onClick={deleteObjective} bg="#8E8D8A" style={{borderRadius:"50px"}}>
+                <Button onClick={deleteObjective} bg="#8E8D8A" size="md" style={{borderRadius:"50px"}}>
                     Wyrzuć
                 </Button>
             </Flex>

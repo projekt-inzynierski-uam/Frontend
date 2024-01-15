@@ -1,5 +1,5 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, TextInput, NumberInput, Button} from '@mantine/core';
+import { Modal, TextInput, NumberInput, Button, Text} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 const CreateObjectiveModalGroup = ({getData, groupId}) => {
@@ -35,26 +35,26 @@ const CreateObjectiveModalGroup = ({getData, groupId}) => {
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowy cel" centered>
                 <form onSubmit={form.onSubmit((values) => createObjectiveGroup({...values, groupId}))}>
+                    <Text size="20px">Tytuł</Text>
                     <TextInput
                         withAsterisk
-                        label="Tytuł"
                         {...form.getInputProps('title')}
                     />
+                    <Text size="20px">Minimalna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
-                        label="Minimalna ilość punktów"
                         min={0}
                         max={99}
                         {...form.getInputProps('min_points')}
                     />
+                    <Text size="20px">Maksymalna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
-                        label="Maksymalna ilość punktów"
                         min={1}
                         max={99}
                         {...form.getInputProps('max_points')}
                     />
-                    <Button onClick={close} type="submit">Wyślij</Button>
+                    <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>
                 </form>
             </Modal>
 

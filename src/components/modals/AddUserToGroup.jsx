@@ -1,5 +1,5 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, TextInput, Button} from '@mantine/core';
+import { Modal, TextInput, Button, Text} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 const AddUserToGroup = ({groupId}) => {
@@ -28,12 +28,12 @@ const AddUserToGroup = ({groupId}) => {
         <>
             <Modal opened={opened} onClose={close} title="Zaproszenie do grupy" centered>
                 <form onSubmit={form.onSubmit((values) => AddMember({...values, groupId}))}>
+                  <Text size="20px">Email użytkownika</Text>
                     <TextInput
                         withAsterisk
-                        label="Email użytkownika"
                         {...form.getInputProps('email')}
                     />
-                    <Button onClick={close} type="submit">Wyślij</Button>
+                    <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>
                 </form>
             </Modal>
 
