@@ -10,7 +10,7 @@ const TodayTasks = () => {
 
     const getData = async () => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/gettasks/${userEmail}`)
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/gettaskstoday/${userEmail}`)
           const json = await response.json()
           setTasks(json)
         } catch (err) {
@@ -36,7 +36,7 @@ const TodayTasks = () => {
             >
                 <ScrollArea w="100%" h={400} offsetScrollbars style={{borderRadius:"50px"}}>
                     {tasks?.map((task) => (
-                            <TaskItem key={task.id} task={task} email={userEmail}/>
+                            <TaskItem key={task.id} task={task} email={userEmail} getData={getData}/>
                         ))}
                 </ScrollArea>
             </Flex>

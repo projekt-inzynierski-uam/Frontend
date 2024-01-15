@@ -17,6 +17,7 @@ export const Register = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const form = useForm({
+    validateInputOnChange: true,
     initialValues: {
       email: '',
       password: '',
@@ -25,8 +26,8 @@ export const Register = () => {
 
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Nieprawidłowy adres email'),
-      password: (val) => (val.length <= 6 ? 'Hasło powinno zawierać przynajmniej 6 znaków' : null),
-      confirmPassword: (val, values) => (val === values.password ? null : 'Passwords do not match'),
+      password: (val) => (val.length < 6 ? 'Hasło powinno zawierać przynajmniej 6 znaków' : null),
+      confirmPassword: (val, values) => (val !== values.password ? 'Hasła się nie zgadzają' : null),
     },
   })
 
@@ -67,14 +68,12 @@ export const Register = () => {
               radius="lg"
               label="Adres email"
               id={emailInputId}
-              placeholder="janusz@gmail.com"
-              value={form.values.email}
-              onChange={(event) => form.setFieldValue('email', event.target.value)}
-              error={form.errors.email && 'Nieprawidłowy adres email'}
+              placeholder="Email"
               styles={{
                 input: { backgroundColor: '#eae7dc', borderColor: 'red' },
                 label: { color: '#eae7dc', fontFamily: 'Oswald', letterSpacing: 3 },
               }}
+              {...form.getInputProps('email')}
             />
 
             <PasswordInput
@@ -84,14 +83,12 @@ export const Register = () => {
               label="Hasło"
               id={passwordInputId}
               placeholder="Hasło"
-              value={form.values.password}
-              onChange={(event) => form.setFieldValue('password', event.target.value)}
-              error={form.errors.password && 'Hasło powinno zawierać przynajmniej 6 znaków'}
               styles={{
                 input: { backgroundColor: '#eae7dc', borderColor: 'red', marginTop: 8 },
                 label: { color: '#eae7dc', fontFamily: 'Oswald', letterSpacing: 3 },
                 innerInput: { margin: 0 },
               }}
+              {...form.getInputProps('password')}
             />
 
             <PasswordInput
@@ -101,9 +98,7 @@ export const Register = () => {
               label="Potwierdź hasło"
               id={confirmPasswordInputId}
               placeholder="Potwierdź hasło"
-              value={form.values.confirmPassword}
-              onChange={(event) => form.setFieldValue('confirmPassword', event.target.value)}
-              error={form.errors.password && 'Hasło powinno zawierać przynajmniej 6 znaków'}
+              {...form.getInputProps('confirmPassword')}
               styles={{
                 input: { backgroundColor: '#eae7dc', borderColor: 'red', marginTop: 8 },
                 label: { color: '#eae7dc', fontFamily: 'Oswald', marginTop: 8, letterSpacing: 3 },

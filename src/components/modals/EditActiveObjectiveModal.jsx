@@ -1,5 +1,5 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, Button, Combobox, useCombobox, InputBase, Input, ScrollArea } from '@mantine/core';
+import { Modal, Button, Combobox, useCombobox, InputBase, Input, ScrollArea, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState, useEffect } from 'react';
 
@@ -49,7 +49,7 @@ const EditActiveObjectiveModal = ({userEmail, getData}) => {
 
     const options = unfinishedObjectives.map((objective) => (
         <Combobox.Option value={objective} key={objective.id}>
-            {objective.title}
+            <Text size='16px'>{objective.title}</Text>
         </Combobox.Option>
     ));
 
@@ -67,6 +67,7 @@ const EditActiveObjectiveModal = ({userEmail, getData}) => {
                         combobox.closeDropdown();
                     }}
                     >
+                    <Text size="20px">Wybierz cel:</Text>
                     <Combobox.Target>
                         <InputBase
                             component="button"
@@ -88,7 +89,7 @@ const EditActiveObjectiveModal = ({userEmail, getData}) => {
                         </Combobox.Options>
                     </Combobox.Dropdown>
                     </Combobox>
-                    <Button onClick={close} type="submit">Wyślij</Button>
+                    <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>
                 </form>
             </Modal>
 
@@ -96,7 +97,7 @@ const EditActiveObjectiveModal = ({userEmail, getData}) => {
                 open(),
                 setValue(null)
                 form.reset()
-            }} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Zmień cel</Button>
+            }} bg="#E98074" style={{borderRadius:"50px", fontSize:"25px", fontWeight:"normal"}} ff={"Oswald"}>Zmień cel</Button>
         </>
     )
 }

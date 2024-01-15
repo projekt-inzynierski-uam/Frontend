@@ -28,9 +28,6 @@ export const HeaderContent = () => {
               <Text>Profil</Text>
             </Menu.Item>
             <Menu.Item>
-              <Text>Ustawienia</Text>
-            </Menu.Item>
-            <Menu.Item>
               <Text onClick={signOut}>Wyloguj się</Text>
             </Menu.Item>
           </Menu.Dropdown>

@@ -1,4 +1,4 @@
-import { Grid, Flex, Center, Title, ScrollArea } from '@mantine/core'
+import { Grid, Flex, Center, Text, ScrollArea, Button } from '@mantine/core'
 import { useState, useEffect } from 'react';
 import { DatePicker } from '@mantine/dates';
 import CreateTaskModal from './modals/CreateTaskModal';
@@ -22,13 +22,16 @@ const TaskManager = () => {
     }
 
     const sendData = async () => {
-        let values = {dates: value}
+        const values = {dates: value}
         try {
-            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/dates`, {
+            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/dates/${userEmail}`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(values)
             })
+            const json = await response.json()
+            console.log(json)
+            setTasks(json)
         } catch (err) {
             console.error(err)
         }
@@ -47,12 +50,15 @@ const TaskManager = () => {
                         justify="center"
                         align="center"
                     >
-                        <DatePicker type="multiple" value={value} onChange={setValue} onClick={sendData} size='lg'/>
+                        <DatePicker type="multiple" value={value} onChange={setValue} size='lg'/>
                     </Flex>
+                    <Center>
+                        <Button bg="#E98074" size='md' onClick={sendData} type="submit" style={{borderRadius:"50px", fontSize:"20px", fontWeight:"normal"}}>Filtruj</Button>
+                    </Center>
                 </Grid.Col>
                 <Grid.Col span={6}>
                     <Center>
-                        <Title order={2} ff={"Oswald"} c='#8E8D8A'>Zadania</Title>
+                        <Text size="30px" ff={"Oswald"} c='#8E8D8A'>Zadania</Text>
                     </Center>
                     <Flex
                         mih="600"
