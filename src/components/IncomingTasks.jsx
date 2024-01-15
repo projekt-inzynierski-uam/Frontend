@@ -1,6 +1,7 @@
-import { Center, Flex, ScrollArea, Title } from '@mantine/core'
+import { Flex, Center, Title, ScrollArea } from '@mantine/core'
+import TaskItem from './TaskItem';
 
-const IncomingTasks = () => {
+const IncomingTasks = ({email, getData, tasks}) => {
     return(
         <>
             <Center>
@@ -14,8 +15,10 @@ const IncomingTasks = () => {
                 direction="column"
                 style={{border:"7px solid #E98074", borderRadius:"50px"}}
             >
-                <ScrollArea w="100%" h={400} offsetScrollbars style={{borderRadius:"50px"}}>
-                    
+                <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
+                    {tasks?.map((task) => (
+                        <TaskItem key={task.id} task={task} email={email} getData={getData}/>
+                    ))}
                 </ScrollArea>
             </Flex>
             <Center>

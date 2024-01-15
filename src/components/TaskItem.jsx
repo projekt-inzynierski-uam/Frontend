@@ -43,11 +43,14 @@ const TaskItem = ({task, getData}) => {
                 w="100%"
             >
                 <Group c="#FFF5F3" bg="#E98074" w="100%"style={{borderRadius:"50px", height:"40px"}} ff={"Oswald"}>
-                    <Text ta="center" pl="10px" size="lg" w="50%">{task.title}</Text>
+                    <Text ta="center" pl="10px" size="lg" w="40%">{task.title}</Text>
                     <Text>Data:{task.day}/{task.month}/{task.year}</Text>
                     <Text>Punkty:{task.points}</Text>
-                    <Group bg="#8E8D8A" miw="20%" maw="50%" style={{borderRadius:"200px"}} ff={"Oswald"} justify="center">
+                    <Group bg="#8E8D8A" miw="20%" maw="30%" style={{borderRadius:"200px"}} ff={"Oswald"} justify="center">
                         <Button onClick={() => FinishTask({points:task.points})} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Zrobione</Button>
+                    </Group>
+                    <Group bg="#8E8D8A" style={{borderRadius:"200px"}} ff={"Oswald"} justify="center">
+                      <Button onClick={DeleteTask} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>
                     </Group>
                 </Group>
             </Flex>
