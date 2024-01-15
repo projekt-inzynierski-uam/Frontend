@@ -42,6 +42,7 @@ const TaskManager = () => {
     }, [])
     return(
         <>
+        {console.log(value)}
             <Grid>
                 <Grid.Col span={6}>
                     <Flex
