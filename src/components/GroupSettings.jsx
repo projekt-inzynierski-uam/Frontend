@@ -1,10 +1,15 @@
 import { Flex, Button, Text, Group, TextInput } from '@mantine/core'
 import { useLocation } from 'react-router-dom'
 import { useForm } from '@mantine/form';
+import Cookies from 'js-cookie'
+import { CookieName } from '../lib/constants/cookies'
+import { useState, useEffect } from 'react'
 
 const GroupSettings = () => {
+    const [permission, setPermission] = useState(false)
     const location = useLocation()
     const { groupId } = location.state
+    const userEmail = Cookies.get(CookieName.EMAIL)
 
     const deleteGroup = async () => {
         try{
@@ -28,6 +33,24 @@ const GroupSettings = () => {
         }
     }
 
+    const getPermission = async () => {
+        try{
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/getpermission/${userEmail}`,{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({groupId: groupId}),
+        })
+        const json = await response.json()
+        setPermission(json)
+        }catch(err){
+          console.error(err)
+        }
+    }
+
+    useEffect(() => {
+        getPermission()
+    }, [])
+
     const form = useForm({
         initialValues: {
           groupName: '',
@@ -37,36 +60,47 @@ const GroupSettings = () => {
             groupName: (value) => (value.length > 25 || value.length < 1 ? 'Zła długość nazwy': null), 
         },
     })
-
-    return(
-        <>
-        <Flex
-            justify="center"
-            align="center"
-            mih={800}
-            direction="column"
-            gap='xl'
-        >
-            <Text size='35px' c="#E98074">Zmień nazwę grupy</Text>
-            <Group>
-                <Text c="#E98074" size='xl'>Nazwa Grupy:</Text>
-                <form onSubmit={form.onSubmit((values) => editGroupName(values))}>
-                    <Group>
-                        <TextInput
-                            {...form.getInputProps('groupName')}
-                        />
-                        <Button type="submit" h={50} style={{background: "#E98074", borderRadius:"20px"}}>
-                            <Text size='xl'>Zmień</Text>
-                        </Button>
-                    </Group>
-                </form>
-            </Group>    
-            <Button onClick={deleteGroup} w="25%" h={50} style={{borderRadius:"20px"}} bg="#8E8D8A">
-                <Text size='xl'>Usuń grupę</Text>
-            </Button>
-        </Flex>
-        </>
-    )
+    if(!permission){
+        return(
+            <Flex
+                align="center"
+                justify="center"
+                mih={800}
+            >
+                <Text size='32px'>Nie masz uprawnień</Text>
+            </Flex>
+        )
+    }else{
+        return(
+            <>
+            <Flex
+                justify="center"
+                align="center"
+                mih={800}
+                direction="column"
+                gap='xl'
+            >
+                <Text size='35px' c="#E98074">Zmień nazwę grupy</Text>
+                <Group>
+                    <Text c="#E98074" size='xl'>Nazwa Grupy:</Text>
+                    <form onSubmit={form.onSubmit((values) => editGroupName(values))}>
+                        <Group>
+                            <TextInput
+                                {...form.getInputProps('groupName')}
+                            />
+                            <Button type="submit" h={50} style={{background: "#E98074", borderRadius:"20px"}}>
+                                <Text size='xl'>Zmień</Text>
+                            </Button>
+                        </Group>
+                    </form>
+                </Group>    
+                <Button onClick={deleteGroup} w="25%" h={50} style={{borderRadius:"20px"}} bg="#8E8D8A">
+                    <Text size='xl'>Usuń grupę</Text>
+                </Button>
+            </Flex>
+            </>
+        )
+    }
 }
 
 export default GroupSettings
