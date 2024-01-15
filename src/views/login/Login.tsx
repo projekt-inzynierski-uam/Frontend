@@ -60,7 +60,7 @@ export const Login = () => {
       Cookies.set(CookieName.AUTH_TOKEN, data.token)
       Cookies.set(CookieName.EMAIL, data.email)
 
-      navigate(Paths.DASHBOARD)
+      navigate(Paths.DASHBOARD_MAIN)
       toast.success('Zalogowano')
     } catch (error) {
       console.error(error)
