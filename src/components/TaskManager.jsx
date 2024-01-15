@@ -30,7 +30,6 @@ const TaskManager = () => {
               body: JSON.stringify(values)
             })
             const json = await response.json()
-            console.log(json)
             setTasks(json)
         } catch (err) {
             console.error(err)
@@ -42,7 +41,6 @@ const TaskManager = () => {
     }, [])
     return(
         <>
-        {console.log(value)}
             <Grid>
                 <Grid.Col span={6}>
                     <Flex

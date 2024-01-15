@@ -1,11 +1,16 @@
 import { Avatar, Menu, Text, Group } from '@mantine/core'
 import { Logo } from './Logo';
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import { Paths } from '../routes/paths'
 import { CookieName } from '../lib/constants/cookies'
 
 export const HeaderContent = () => {
+
+  const anchorStyles = {
+    textDecoration: 'none',
+  }
 
   const navigate = useNavigate()
 
@@ -25,10 +30,10 @@ export const HeaderContent = () => {
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Item>
-              <Text>Profil</Text>
+              <Link to={'/dashboard/profil'} style={anchorStyles}><Text c="black" ff="Oswald" fz="xl">Profil</Text></Link>
             </Menu.Item>
             <Menu.Item>
-              <Text onClick={signOut}>Wyloguj się</Text>
+              <Text onClick={signOut} fz="xl">Wyloguj się</Text>
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>

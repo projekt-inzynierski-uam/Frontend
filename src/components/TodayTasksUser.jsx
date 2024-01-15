@@ -1,7 +1,7 @@
 import { Flex, Center, Title, ScrollArea } from '@mantine/core'
-import TaskItem from './TaskItem';
+import UserGroupTaskItem from './UserGroupTaskItem';
 
-const TodayTasks = ({email, getData, tasks}) => {
+const TodayTasksUser = ({getData, tasks}) => {
     return(
         <>
             <Center>
@@ -17,7 +17,7 @@ const TodayTasks = ({email, getData, tasks}) => {
             >
                 <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
                     {tasks?.map((task) => (
-                            <TaskItem key={task.id} task={task} email={email} getData={getData}/>
+                            <UserGroupTaskItem key={task.id} task={task} getData={getData}/>
                         ))}
                 </ScrollArea>
             </Flex>
@@ -28,4 +28,4 @@ const TodayTasks = ({email, getData, tasks}) => {
     )
 }
 
-export default TodayTasks
+export default TodayTasksUser

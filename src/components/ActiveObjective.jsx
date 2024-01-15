@@ -1,27 +1,7 @@
 import { Flex, Text, Group } from '@mantine/core'
 import EditActiveObjectiveModal from './modals/EditActiveObjectiveModal' 
-import { useState, useEffect } from 'react'
-import Cookies from 'js-cookie'
-import { CookieName } from '../lib/constants/cookies'
 
-const ActiveObjective = ({email}) => {
-
-    const [activeObjective, setActiveObjective] = useState([{title:"", current_points:"brak danych", max_points:"brak danych"},{title:"", current_points:"brak danych", max_points:"brak danych"}])
-    const userEmail = Cookies.get(CookieName.EMAIL)
-
-    const getData = async () => {
-        try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/activeobjective/${userEmail}`)
-          const json = await response.json()
-          setActiveObjective(json)
-        } catch (err) {
-          console.error(err)
-        }
-    }
-    
-    useEffect(() => {
-        getData()
-    }, [])
+const ActiveObjective = ({email, getData, activeObjective}) => {
     
     return(
         <>

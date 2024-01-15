@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 
 const GroupSettings = () => {
     const [permission, setPermission] = useState(false)
+    const [groupName, setGroupName] = useState(false)
     const location = useLocation()
     const { groupId } = location.state
     const userEmail = Cookies.get(CookieName.EMAIL)
@@ -28,6 +29,17 @@ const GroupSettings = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
+          getGroupName()
+        } catch (err) {
+          console.error(err)
+        }
+    }
+
+    const getGroupName = async () => {
+        try {
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/getgroupname/${groupId}`)
+          const json = await response.json()
+          setGroupName(json)
         } catch (err) {
           console.error(err)
         }
@@ -48,6 +60,7 @@ const GroupSettings = () => {
     }
 
     useEffect(() => {
+        getGroupName(),
         getPermission()
     }, [])
 
@@ -80,9 +93,10 @@ const GroupSettings = () => {
                 direction="column"
                 gap='xl'
             >
+                <Text size='35px' c="#E98074">Nazwa grupy:"{groupName[0].name}"</Text>
                 <Text size='35px' c="#E98074">Zmień nazwę grupy</Text>
                 <Group>
-                    <Text c="#E98074" size='xl'>Nazwa Grupy:</Text>
+                    <Text c="#E98074" size='xl'>Nowa nazwa grupy:</Text>
                     <form onSubmit={form.onSubmit((values) => editGroupName(values))}>
                         <Group>
                             <TextInput
