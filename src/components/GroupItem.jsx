@@ -21,7 +21,7 @@ const GroupItem = ({group}) => {
                             gap="xl"
                         >
                                 <Center w="100%" h="100%"> 
-                                    <Text size="xl">{group.name}</Text>
+                                    <Text size="30px">{group.name}</Text>
                                 </Center>
                         </Flex>
                     </Button>
