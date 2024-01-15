@@ -28,16 +28,16 @@ const GroupDashboard = () => {
                                 gap="xl"
                             >
                                     <Center w="100%" h="100%"> 
-                                        <Text size="xl">Panel</Text>
+                                        <Text size="50px">Panel</Text>
                                     </Center>
                                     <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                         >   
-                                                <Text>
+                                                <Text size='20px'>
                                                     Administrator grupy może tu akceptować zadania oddane przez użytkowników
                                                 </Text>
-                                                <Text>
+                                                <Text size='20px'>
                                                     Członek grupy znajdzie tutaj swój cel i jego postęp
                                                 </Text>
                                             </Flex>
@@ -54,16 +54,16 @@ const GroupDashboard = () => {
                                 gap="xl"
                             >
                                     <Center w="100%" h="100%"> 
-                                        <Text size="xl">Zadania</Text>
+                                        <Text size="50px">Zadania</Text>
                                     </Center>
                                     <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                         >   
-                                                <Text>
+                                                <Text size='20px'>
                                                     Administrator grupy doda tutaj zadania dla siebie lub innego członka grupy
                                                 </Text>
-                                                <Text>
+                                                <Text size='20px'>
                                                     Członek grupy widzi tutaj swoje zadania
                                                 </Text>
                                             </Flex>
@@ -89,16 +89,16 @@ const GroupDashboard = () => {
                                 w="100%"
                             >
                                     <Center w="100%"> 
-                                        <Text size="xl">Cele</Text>
+                                        <Text size="50px">Cele</Text>
                                     </Center>
                                     <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                         >   
-                                                <Text>
+                                                <Text size='20px'>
                                                     Widoczne tylko dla administarora grupy cele które może 
                                                 </Text>
-                                                <Text>
+                                                <Text size='20px'>
                                                     dodawać i przypisywać członkom grupy
                                                 </Text>
                                             </Flex>
@@ -115,16 +115,16 @@ const GroupDashboard = () => {
                                 gap="xl"
                             >
                                     <Center w="100%" h="100%"> 
-                                        <Text size="xl">Użytkownicy</Text>
+                                        <Text size="50px">Użytkownicy</Text>
                                     </Center>
                                     <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                         >   
-                                                <Text>
+                                                <Text size='20px'>
                                                     Lista użytkowników znajdujących się w grupie
                                                 </Text>
-                                                <Text>
+                                                <Text size='20px'>
                                                     którymi administrator grupy może zarządzać
                                                 </Text>
                                             </Flex>
@@ -144,7 +144,7 @@ const GroupDashboard = () => {
                             gap="xl"
                         >
                             <Center w="100%" h="100%"> 
-                                <Text size="xl">Ustawienia</Text>
+                                <Text size="50px">Ustawienia</Text>
                             </Center>
                         </Flex>
                     </Button>

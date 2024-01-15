@@ -85,7 +85,7 @@ const HomePage = () => {
               <span className="e1_146">Praca</span>
               <span className="e1_147">Prasa</span>
             </div>
-            <span className="e1_148">Copyright 2019 Sortorio, Inc. Terms & Privacy</span>
+            <span className="e1_148">Copyright 2024 Sortorio</span>
           </div>
         </div>
         <div className="e1_36">
