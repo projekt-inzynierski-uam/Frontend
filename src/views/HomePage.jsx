@@ -24,10 +24,6 @@ const HomePage = () => {
               Ustawiaj i otrzymuj punty za wykonywanie zadań, dzięki czemu zostaniesz zmotywowany do
               dalszego działania.
             </span>
-            <div className="e1_128">
-              <span className="e1_129">więcej</span>
-              <div className="e1_130"></div>
-            </div>
             <span className="e1_133">03</span>
             <div className="e1_132"></div>
           </div>
@@ -43,8 +39,6 @@ const HomePage = () => {
               się na tym, co najważniejsze.
             </span>
             <div className="e1_91">
-              <span className="e1_92">więcej</span>
-              <div className="e1_93"></div>
             </div>
             <span className="e1_99">02</span>
             <div className="e1_98"></div>
@@ -56,37 +50,15 @@ const HomePage = () => {
             </div>
             <span className="e1_77">Dodaj swoje zadania. Zorganizuj swoje życie.</span>
             <span className="e1_78">
-              Błyskawicznie dodawaj zadania takie jak: „Przejrzeć e-maile z pracy codziennie o
-              10:00” do swojej listy zadań, używając języka naturalnego, dzięki zaawansowanym
-              funkcjom rozpoznawania dat.
+            W dzisiejszym szybkim tempie życia, utrzymanie porządku w zadaniach i terminach może być trudne.
+             Brak systematycznego podejścia do zarządzania czasem prowadzi do zgubienia priorytetów, co z kolei wpływa na skuteczność i spokój psychiczny.
             </span>
             <div className="e1_79">
-              <span className="e1_80">więcej</span>
-              <div className="e1_81"></div>
             </div>
             <span className="e1_82">01</span>
             <div className="e1_84"></div>
           </div>
-          <div className="e1_134">
-            <span className="e1_135">
-              Już dzisiaj zoorganizuj swoje życie i czerp korzyści z uporzątkowanego dnia.
-            </span>
-            <div className="e1_136">
-              <span className="e1_137">Więcej na naszym Blogu</span>
-              <span className="e1_138">O Sortorio</span>
-              <span className="e1_139">Twórcy</span>
-              <span className="e1_140">Napisz dla nas</span>
-              <span className="e1_141">Kontakt</span>
-              <span className="e1_142">Polityka Prywatności</span>
-            </div>
-            <div className="e1_143">
-              <span className="e1_144">Wiecej o Sortorio</span>
-              <span className="e1_145">Drużyna</span>
-              <span className="e1_146">Praca</span>
-              <span className="e1_147">Prasa</span>
-            </div>
-            <span className="e1_148">Copyright 2024 Sortorio</span>
-          </div>
+          
         </div>
         <div className="e1_36">
           <div className="e1_39">
@@ -95,8 +67,6 @@ const HomePage = () => {
             <div className="e1_41"></div>
           </div>
           <div className="e1_49">
-            <span className="e1_50">zjedź niżej</span>
-            <div className="e1_54"></div>
           </div>
         </div>
         <div className="e1_3">
@@ -112,23 +82,6 @@ const HomePage = () => {
           <span className="e1_14">Sortorio</span>
         </div>
         <div className="e1_55">
-          <span className="e1_58">Followuj nas</span>
-          <div className="e1_60"></div>
-          <div className="e1_62"></div>
-        </div>
-        <div className="e1_63">
-          <div className="e1_64">
-            <div className="e1_65">
-              <span className="e1_66">Start</span>
-              <span className="e1_67">01</span>
-              <span className="e1_68">02</span>
-              <span className="e1_69">03</span>
-            </div>
-          </div>
-          <div className="e1_70">
-            <div className="e1_71"></div>
-            <div className="e1_72"></div>
-          </div>
         </div>
       </div>
     </>
