@@ -31,7 +31,7 @@ const GroupDashboard = () => {
                                     <Center w="100%" h="100%"> 
                                         <Text size="50px">Panel</Text>
                                     </Center>
-                                    <Group bg="#8E8D8A" w="740px" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                             align="center"
@@ -60,7 +60,7 @@ const GroupDashboard = () => {
                                     <Center w="100%" h="100%"> 
                                         <Text size="50px">Zadania</Text>
                                     </Center>
-                                    <Group bg="#8E8D8A" w="740px" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                             align="center"
@@ -98,7 +98,7 @@ const GroupDashboard = () => {
                                     <Center w="100%"> 
                                         <Text size="50px">Cele</Text>
                                     </Center>
-                                    <Group bg="#8E8D8A" w="740px" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                             align="center"
@@ -127,7 +127,7 @@ const GroupDashboard = () => {
                                     <Center w="100%" h="100%"> 
                                         <Text size="50px">Użytkownicy</Text>
                                     </Center>
-                                    <Group bg="#8E8D8A" w="740px" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
                                             align="center"
