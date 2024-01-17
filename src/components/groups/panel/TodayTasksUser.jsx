@@ -17,7 +17,7 @@ const TodayTasksUser = ({getData, tasks}) => {
             >
                 <ScrollArea w="100%" h={600} offsetScrollbars style={{borderRadius:"50px"}}>
                     {tasks?.map((task) => (
-                            <UsserGroupTaskItem key={task.id} task={task} getData={getData}/>
+                            <UserGroupTaskItem key={task.id} task={task} getData={getData}/>
                         ))}
                 </ScrollArea>
             </Flex>

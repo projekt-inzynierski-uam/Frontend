@@ -5,7 +5,7 @@ const AdminTasks = ({getData, tasks}) => {
     return(
         <>
             <Center>
-                <Title order={2} ff={"Oswald"} c='#8E8D8A'>Moje zadania w grupie</Title>
+                <Title order={2} ff={"Oswald"} c='#8E8D8A'>Moje dzisiejsze zadania</Title>
             </Center>
             <Flex
                 mih="400"

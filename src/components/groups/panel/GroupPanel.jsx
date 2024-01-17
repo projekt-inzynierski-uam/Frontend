@@ -54,7 +54,7 @@ const GroupPanel = () => {
 
     const getAdminTasks = async () => {
         try{
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/getincominggrouptasks/${userEmail}`,{
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/gettodaytaskuser/${userEmail}`,{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({groupId: groupId})
