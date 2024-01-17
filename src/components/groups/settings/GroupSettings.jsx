@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 
 const GroupSettings = () => {
     const [permission, setPermission] = useState(false)
-    const [groupName, setGroupName] = useState({name:"brak danych"},{name:"brak danych"})
+    const [groupName, setGroupName] = useState([{name:"brak danych"},{name:"brak danych"}])
     const location = useLocation()
     const { groupId } = location.state
     const userEmail = Cookies.get(CookieName.EMAIL)
