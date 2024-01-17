@@ -105,8 +105,8 @@ const GroupPanel = () => {
     }
 
     useEffect(() => {
-        getData(),
-        getPermission()
+        getPermission(),
+        getData()
     }, [])
 
     return(
