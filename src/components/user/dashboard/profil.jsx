@@ -2,9 +2,9 @@ import {Flex, Text} from '@mantine/core'
 import Cookies from 'js-cookie'
 import { CookieName } from '../../../lib/constants/cookies'
 
-const userEmail = Cookies.get(CookieName.EMAIL)
-
 const Profil = () => {
+    const userEmail = Cookies.get(CookieName.EMAIL)
+
     return(
         <>
         <Flex
@@ -12,7 +12,7 @@ const Profil = () => {
             align='center'
             mih="600px"
         >
-            <Text size='35px' c="#E98074">Witaj {userEmail}</Text>
+            <Text size='35px' c="black">Witaj {userEmail}</Text>
         </Flex>
         </>
     )

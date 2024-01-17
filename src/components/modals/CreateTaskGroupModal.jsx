@@ -76,7 +76,7 @@ const CreateTaskGroupModal = ({groupId, userEmail, getData}) => {
                         max={99}
                         {...form.getInputProps('points')}
                     />
-                    <Text size="20px">Data rozpoczecia</Text>
+                    <Text size="20px">Data</Text>
                     <DateInput
                         withAsterisk
                         value={dateend}

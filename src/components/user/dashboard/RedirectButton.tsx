@@ -17,7 +17,7 @@ export const RedirectButton = ({ path, name, icon }: Props) => {
       <Link to={path} style={anchorStyles}>
         <Group justify="center">
           <Image src={icon} fit="contain" height={23} />
-          <Text c="white" ff="Oswald" fz="xl">
+          <Text c="white" ff="Oswald" fz="xl" size='35px'>
             {name}
           </Text>
         </Group>

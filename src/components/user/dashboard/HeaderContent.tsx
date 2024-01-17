@@ -37,7 +37,7 @@ export const HeaderContent = () => {
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>
-        <Text c="white">Konto</Text>
+        <Text c="white" size='22px'>Konto</Text>
       </Group>
     </>
   )

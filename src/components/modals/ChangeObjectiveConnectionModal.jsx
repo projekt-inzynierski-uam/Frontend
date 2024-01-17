@@ -50,7 +50,7 @@ const options2 = objectives.map((objective) => (
 ));
     return(
         <>
-        <Modal opened={opened} onClose={close} title="Przypisz zadanie" centered>
+        <Modal opened={opened} onClose={close} title="Przypisz cel" centered>
                 <form onSubmit={form.onSubmit((values) => changeConnection({...values}))}>
                     <Combobox
                         store={combobox}
