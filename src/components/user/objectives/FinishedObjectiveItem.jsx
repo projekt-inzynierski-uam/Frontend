@@ -9,9 +9,7 @@ const FinishedObjectiveItem = ({objective, getData}) => {
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/deleteobjective/${objective.id}`,{
             method: 'DELETE',
         })
-        if(response.status === 200){
-            getData()
-        }
+        getData()
         }catch(err){
           console.error(err)
         }
