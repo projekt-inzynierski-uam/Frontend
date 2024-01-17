@@ -1,12 +1,14 @@
 import { Group, Flex, Text, Button } from "@mantine/core"
 
-const FinishedTaskItem = ({task, getData}) => {
+const FinishedTaskItem = ({task, getData, groupId}) => {
     const accepttask = async () => {
         try{
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/accepttask/${task.id}`,{
-            method: 'DELETE',
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({groupId: groupId, userEmail: task.assignedto, points: task.points}),
         })
+        console.log(task)
         getData()
         }catch(err){
           console.error(err)

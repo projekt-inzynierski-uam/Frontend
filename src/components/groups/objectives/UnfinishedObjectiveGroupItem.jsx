@@ -8,11 +8,9 @@ const UnfinishedObjectiveGroupItem = ({objective, getData}) => {
     const deleteObjective = async () => {
         try{
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/deletegroupobjective/${objective.id}`,{
-            method: 'PUT',
+            method: 'DELETE',
         })
-        if(response.status === 200){
-            getData()
-        }
+        getData()
         }catch(err){
           console.error(err)
         }

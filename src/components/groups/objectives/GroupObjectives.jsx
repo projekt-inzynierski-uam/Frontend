@@ -9,7 +9,7 @@ import AllObjectives from './AllObjectives'
 const GroupObjectives = () => {
     const [permission, setPermission] = useState(false)
     const [unfinishedObjectives, setUnfinishedObjectives] = useState(null)
-    const [allObjectives, setAllObjectives] = useState(null)
+    const [users, setUsers] = useState([])
     const userEmail = Cookies.get(CookieName.EMAIL)
     const location = useLocation()
     const { groupId } = location.state
@@ -24,8 +24,19 @@ const GroupObjectives = () => {
         }
     }
 
+    const getUsers = async () => {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/groupusers/${groupId}`)
+            const json = await response.json()
+            setUsers(json)
+        } catch (err) {
+          console.error(err)
+        }
+    }
+
     const getData = async () => {
-        getDataUnfinished()
+        getDataUnfinished(),
+        getUsers()
     }
 
     const getPermission = async () => {
@@ -55,7 +66,7 @@ const GroupObjectives = () => {
                 <UnfinishedObjectivesGroup unfinishedObjectives={unfinishedObjectives} userEmail={userEmail} groupId={groupId} getData={getData}/>
             </Grid.Col>
             <Grid.Col span={6}>
-                <AllObjectives unfinishedObjectives={unfinishedObjectives} groupId={groupId} getData={getData}/>
+                <AllObjectives unfinishedObjectives={unfinishedObjectives} groupId={groupId} getData={getData} users={users}/>
             </Grid.Col>
         </Grid>
         }
