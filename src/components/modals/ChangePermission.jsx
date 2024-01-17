@@ -130,7 +130,7 @@ const options2 = roles.map((role) => (
                 setValue(null),
                 setValue2(null),
                 form.reset()
-            }} bg="#E98074" style={{borderRadius:"10px",fontSize:"20px", fontWeight:"normal"}} h={48} ff={"Oswald"}>Zmień dostępność</Button>
+            }} bg="#E98074" style={{borderRadius:"10px",fontSize:"20px", fontWeight:"normal"}} h={48} ff={"Oswald"}>Zmień Role</Button>
         </>
     )
 }
