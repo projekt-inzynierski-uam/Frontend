@@ -1,4 +1,4 @@
-import {Flex, ScrollArea, Text, Center} from '@mantine/core'
+import {Flex, ScrollArea, Title, Center} from '@mantine/core'
 import UnfinishedObjectiveGroupItem from './UnfinishedObjectiveGroupItem'
 import CreateObjectiveModalGroup from '../../modals/CreateObjectiveModalGroup'
 
@@ -8,7 +8,7 @@ const UnfinishedObjectivesGroup = ({unfinishedObjectives, getData, groupId, user
     return (
         <>
             <Center>
-                <Text size='40px' ff={"Oswald"} c='#8E8D8A'>Utworzone cele</Text>
+                <Title order={2} ff={"Oswald"} c='#8E8D8A'>Utworzone cele</Title>
             </Center>
             <Flex
                 mih="600"

@@ -1,4 +1,4 @@
-import { Grid, Flex, Center, Text, ScrollArea, Button } from '@mantine/core'
+import { Grid, Flex, Center, Title, ScrollArea, Button } from '@mantine/core'
 import { useState, useEffect } from 'react';
 import { DatePicker } from '@mantine/dates';
 import CreateTaskModal from '../../modals/CreateTaskModal';
@@ -56,7 +56,7 @@ const TaskManager = () => {
                 </Grid.Col>
                 <Grid.Col span={6}>
                     <Center>
-                        <Text size="30px" ff={"Oswald"} c='#8E8D8A'>Zadania</Text>
+                        <Title order={2} ff={"Oswald"} c='#8E8D8A'>Zadania</Title>
                     </Center>
                     <Flex
                         mih="600"

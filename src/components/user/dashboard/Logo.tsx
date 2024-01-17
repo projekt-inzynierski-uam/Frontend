@@ -1,14 +1,10 @@
-import { Title, Image, Group } from '@mantine/core' 
-import crossImage from '../../../assets/x-mark.png'
+import { Text, Group } from '@mantine/core' 
 
 export const Logo = () => {
   return (
     <>
       <Group gap="xs">
-        <Image
-          src={crossImage}
-        />
-        <Title ff="Oswald" order={2} c='white'>Sortorio</Title>
+        <Text ff="Oswald" size="50px" c='white'>Sortorio</Text>
       </Group>
     </>
   )

@@ -1,4 +1,4 @@
-import { Flex, ScrollArea, Text, Center } from '@mantine/core'
+import { Flex, ScrollArea, Title, Center } from '@mantine/core'
 import { useLocation } from 'react-router-dom'
 import AddUserToGroup  from '../../modals/AddUserToGroup'
 import { useState, useEffect } from 'react'
@@ -44,7 +44,7 @@ const GroupUsers = () => {
     return(
         <>
             <Center>
-                <Text size='40px' ff={"Oswald"} c='#8E8D8A'>Lista użytkowników grupy "{groupName}"</Text>
+                <Title order={2} ff={"Oswald"} c='#8E8D8A'>Lista użytkowników grupy "{groupName}"</Title>
             </Center>
             <Center>
                 <Flex
