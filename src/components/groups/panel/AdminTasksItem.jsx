@@ -14,6 +14,17 @@ const AdminTasksItem = ({task, getData}) => {
           }
     }
 
+    const accepttask = async () => {
+        try{
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/accepttask/${task.id}`,{
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+        })
+        getData()
+        }catch(err){
+          console.error(err)
+        }
+    }
     return(
         <>
             <Flex
@@ -29,7 +40,7 @@ const AdminTasksItem = ({task, getData}) => {
                     <Text size="16px">Data:{task.day_date}/{task.month_date}/{task.year_date}</Text>
                     <Text size="16px">Punkty:{task.points}</Text>
                     <Group bg="#8E8D8A" miw="20%" maw="30%" style={{borderRadius:"200px"}} ff={"Oswald"} justify="center">
-                        <Button onClick={DeleteTaskGroup} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Zrobione</Button>
+                        <Button onClick={accepttask} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Zrobione</Button>
                     </Group>
                     <Group bg="#8E8D8A" style={{borderRadius:"200px"}} ff={"Oswald"} justify="center">
                       <Button onClick={DeleteTaskGroup} bg="#8E8D8A" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Usuń</Button>

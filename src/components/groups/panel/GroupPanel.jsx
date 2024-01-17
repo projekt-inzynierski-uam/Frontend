@@ -3,6 +3,7 @@ import TodayTasksUser from './TodayTasksUser'
 import FinishedTasks from './FinishedTasks'
 import AdminTasks from './AdminTasks'
 import IncomingTasksUser from './IncomingTasksUser'
+import ActiveObjectiveGroup from './ActiveObjectiveGroup'
 import { useLocation } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import { CookieName } from '../../../lib/constants/cookies'
@@ -12,6 +13,7 @@ const GroupPanel = () => {
     const [finishedTasks, setFinishedTasks] = useState([])
     const [todayTaskUser, setTodayTaskUser] = useState([])
     const [incomingTasks, setIncomingTasks] = useState([])
+    const [activeObjective, setActiveObjective] = useState([{title:"Ustaw cel", current_points:"0", max_points:"0"},{title:"Ustaw cel", current_points:"0", max_points:"0"}])
     const [adminTasks, setAdminTasks] = useState([])
     const userEmail = Cookies.get(CookieName.EMAIL)
     const [permission, setPermission] = useState(false)
@@ -66,6 +68,20 @@ const GroupPanel = () => {
         }
     }
 
+    const getActiveObjectiveGroup = async () => {
+        try{
+            const response = await fetch(`${import.meta.env.VITE_DBSERVER}/activeobjectivegroup/${userEmail}`,{
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({groupId: groupId})
+            })
+          const json = await response.json()
+          setActiveObjective(json)
+        } catch (err) {
+          console.error(err)
+        }
+    }
+
     const getPermission = async () => {
         try{
           const response = await fetch(`${import.meta.env.VITE_DBSERVER}/getpermission/${userEmail}`,{
@@ -84,7 +100,8 @@ const GroupPanel = () => {
         getFinishedTasks(),
         getTodayTaskUser(),
         getIncomingTasks(),
-        getAdminTasks()
+        getAdminTasks(),
+        getActiveObjectiveGroup()
     }
 
     useEffect(() => {
@@ -98,11 +115,11 @@ const GroupPanel = () => {
                 <Grid.Col span={6}>
                 </Grid.Col>
                 <Grid.Col span={6}>
-                    {/*<ActiveObjective email={userEmail} getData={getData} activeObjective={activeObjective}/>*/}
+                    <ActiveObjectiveGroup email={userEmail} getData={getData} activeObjective={activeObjective}/>
                 </Grid.Col>
                 <Grid.Col span={6}>
                     {permission &&
-                        <FinishedTasks email={userEmail} getData={getData} tasks={finishedTasks}/>
+                        <FinishedTasks getData={getData} tasks={finishedTasks} groupId={groupId}/>
                     }
                     {!permission &&
                         <TodayTasksUser email={userEmail} getData={getData} tasks={todayTaskUser}/>

@@ -2,7 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, TextInput, NumberInput, Button, Text} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-const CreateObjectiveModalGroup = ({getData, groupId}) => {
+const CreateObjectiveModalGroup = ({getData, groupId, userEmail}) => {
 
     const form = useForm({
         initialValues: {
@@ -34,7 +34,7 @@ const CreateObjectiveModalGroup = ({getData, groupId}) => {
     return (
         <>
             <Modal opened={opened} onClose={close} title="Dodaj nowy cel" centered>
-                <form onSubmit={form.onSubmit((values) => createObjectiveGroup({...values, groupId}))}>
+                <form onSubmit={form.onSubmit((values) => createObjectiveGroup({...values, groupId, userEmail}))}>
                     <Text size="20px">Tytuł</Text>
                     <TextInput
                         withAsterisk

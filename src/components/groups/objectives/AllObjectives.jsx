@@ -1,7 +1,8 @@
-import {Flex, ScrollArea, Title, Center} from '@mantine/core'
+import {Flex, ScrollArea, Title, Center, useRandomClassName} from '@mantine/core'
 import AllObjectivesItem from './AllObjectivesItem'
+import ChangeObjectiveConnectionModal from '../../modals/ChangeObjectiveConnectionModal'
 
-const AllObjectives = ({unfinishedObjectives, getData, groupId}) => {
+const AllObjectives = ({unfinishedObjectives, getData, groupId, users}) => {
     return(
         <>
             <Center>
@@ -22,7 +23,7 @@ const AllObjectives = ({unfinishedObjectives, getData, groupId}) => {
                 </ScrollArea>
             </Flex>
             <Center>
-                
+                <ChangeObjectiveConnectionModal getData={getData} groupId={groupId} users={users} objectives={unfinishedObjectives}/>
             </Center>
         </>
     )
