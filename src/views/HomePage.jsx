@@ -72,7 +72,7 @@ const HomePage = () => {
         <div className="e1_3">
           <div className="e1_15">
             <Link to={Paths.LOGIN}>
-              <span className="e1_16">Konto</span>
+              <span className="e1_16">Zaloguj</span>
               <div className="e1_17">
                 <div className="e1_31"></div>
               </div>
