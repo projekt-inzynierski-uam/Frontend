@@ -2,13 +2,13 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, TextInput, NumberInput, Button, Text} from '@mantine/core';
 import { useForm } from '@mantine/form';
 
-const CreateObjectiveModalGroup = ({getData, groupId, userEmail}) => {
+const EditObjectiveModalGroup = ({objective, getData}) => {
 
     const form = useForm({
         initialValues: {
-          title: '',
-          min_points: 0,
-          max_points: 0
+          title: objective.title,
+          current_points: objective.current_points,
+          max_points: objective.max_points
         },
     
         validate: {
@@ -18,10 +18,10 @@ const CreateObjectiveModalGroup = ({getData, groupId, userEmail}) => {
 
     const [opened, { open, close }] = useDisclosure(false);
 
-    const createObjectiveGroup = async (data) => {
+    const editObjective = async (data) => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/createobjectivegroup`, {
-            method: 'POST',
+          const response = await fetch(`${import.meta.env.VITE_DBSERVER}/editobjectivegroup/${objective.id}`, {
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           })
@@ -33,24 +33,27 @@ const CreateObjectiveModalGroup = ({getData, groupId, userEmail}) => {
 
     return (
         <>
-            <Modal opened={opened} onClose={close} title="Dodaj nowy cel" centered>
-                <form onSubmit={form.onSubmit((values) => createObjectiveGroup({...values, groupId, userEmail}))}>
+            <Modal opened={opened} onClose={close} title="Edytuj cel" centered>
+                <form onSubmit={form.onSubmit((values) => editObjective({...values}))}>
                     <Text size="20px">Tytuł</Text>
                     <TextInput
                         withAsterisk
+                        placeholder={objective.title}
                         {...form.getInputProps('title')}
                     />
-                    <Text size="20px">Minimalna ilość punktów</Text>
+                    <Text size="20px">Aktualna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
+                        placeholder={objective.current_points}
                         min={0}
                         max={99}
-                        {...form.getInputProps('min_points')}
+                        {...form.getInputProps('current_points')}
                     />
                     <Text size="20px">Maksymalna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
-                        min={1}
+                        placeholder={objective.max_points}
+                        min={0}
                         max={99}
                         {...form.getInputProps('max_points')}
                     />
@@ -61,9 +64,9 @@ const CreateObjectiveModalGroup = ({getData, groupId, userEmail}) => {
             <Button onClick={() => {
                 open(),
                 form.reset()
-            }} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Dodaj nowy cel</Button>
+            }} bg="#E98074" style={{borderRadius:"50px", fontSize:"15px", fontWeight:"normal"}} ff={"Oswald"}>Edytuj</Button>
         </>
     )
 }
 
-export default CreateObjectiveModalGroup
+export default EditObjectiveModalGroup
