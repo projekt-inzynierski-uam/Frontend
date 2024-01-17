@@ -8,7 +8,7 @@ import TaskItem from './TaskItem';
 
 const TaskManager = () => {
     const [value, setValue] = useState([])
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState([{}])
     const userEmail = Cookies.get(CookieName.EMAIL)
 
     const getData = async () => {

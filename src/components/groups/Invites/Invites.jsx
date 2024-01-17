@@ -5,7 +5,7 @@ import { CookieName } from '../../../lib/constants/cookies'
 import { useState, useEffect } from 'react'
 
 const Invites = () => {
-    const [invites, setInvites] = useState(null)
+    const [invites, setInvites] = useState([{}])
     const userEmail = Cookies.get(CookieName.EMAIL)
 
     const getData = async () => {

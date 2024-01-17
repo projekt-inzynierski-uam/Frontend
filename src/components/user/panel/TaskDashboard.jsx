@@ -7,8 +7,8 @@ import { CookieName } from '../../../lib/constants/cookies'
 import { useState, useEffect } from 'react'
 
 const TaskDashboard = () => {
-    const [tasksToday, setTasksToday] = useState([])
-    const [tasksIncoming, setTasksIncoming] = useState([])
+    const [tasksToday, setTasksToday] = useState([{}])
+    const [tasksIncoming, setTasksIncoming] = useState([{}])
     const [activeObjective, setActiveObjective] = useState([{title:"Ustaw cel", current_points:"0", max_points:"0"},{title:"Ustaw cel", current_points:"0", max_points:"0"}])
     const userEmail = Cookies.get(CookieName.EMAIL)
 

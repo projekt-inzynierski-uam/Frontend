@@ -8,8 +8,8 @@ import AllObjectives from './AllObjectives'
 
 const GroupObjectives = () => {
     const [permission, setPermission] = useState(false)
-    const [unfinishedObjectives, setUnfinishedObjectives] = useState(null)
-    const [users, setUsers] = useState([])
+    const [unfinishedObjectives, setUnfinishedObjectives] = useState([{}])
+    const [users, setUsers] = useState([{}])
     const userEmail = Cookies.get(CookieName.EMAIL)
     const location = useLocation()
     const { groupId } = location.state
@@ -54,8 +54,8 @@ const GroupObjectives = () => {
     }
 
     useEffect(() => {
-        getData(),
-        getPermission()
+        getPermission(),
+        getData()
     }, [])
 
     return (

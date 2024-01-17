@@ -60,8 +60,8 @@ const GroupSettings = () => {
     }
 
     useEffect(() => {
-        getGroupName(),
-        getPermission()
+        getPermission(),
+        getGroupName()
     }, [])
 
     const form = useForm({

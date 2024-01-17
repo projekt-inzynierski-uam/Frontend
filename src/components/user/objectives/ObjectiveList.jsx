@@ -6,8 +6,8 @@ import Cookies from 'js-cookie'
 import { CookieName } from '../../../lib/constants/cookies'
 
 const ObjectiveList = () => {
-    const [unfinishedObjectives, setUnfinishedObjectives] = useState(null)
-    const [finishedObjectives, setfinishedObjectives] = useState(null)
+    const [unfinishedObjectives, setUnfinishedObjectives] = useState([{}])
+    const [finishedObjectives, setfinishedObjectives] = useState([{}])
     const userEmail = Cookies.get(CookieName.EMAIL)
 
     const getDataUnfinished = async () => {

@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 import { CookieName } from '../../../lib/constants/cookies'
 
 const MyGroups = () => {
-    const [groups, setGroups] = useState(null)
+    const [groups, setGroups] = useState([{}])
     const userEmail = Cookies.get(CookieName.EMAIL)
 
     const getData = async () => {

@@ -91,8 +91,8 @@ const GroupTasks = () => {
     }
 
     useEffect(() => {
+        getPermission(),
         getData()
-        getPermission()
     }, [])
 
     if(permission){
