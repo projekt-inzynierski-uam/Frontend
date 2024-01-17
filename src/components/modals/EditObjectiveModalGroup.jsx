@@ -46,7 +46,7 @@ const EditObjectiveModalGroup = ({objective, getData}) => {
                         withAsterisk
                         placeholder={objective.current_points}
                         min={0}
-                        max={99}
+                        max={100}
                         {...form.getInputProps('current_points')}
                     />
                     <Text size="20px">Maksymalna ilość punktów</Text>
@@ -54,7 +54,7 @@ const EditObjectiveModalGroup = ({objective, getData}) => {
                         withAsterisk
                         placeholder={objective.max_points}
                         min={0}
-                        max={99}
+                        max={100}
                         {...form.getInputProps('max_points')}
                     />
                     <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>

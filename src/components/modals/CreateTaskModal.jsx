@@ -46,7 +46,7 @@ const CreateTaskModal = ({email, getData}) => {
                     <NumberInput
                         withAsterisk
                         min={0}
-                        max={99}
+                        max={100}
                         {...form.getInputProps('points')}
                     />
                     <Text size="20px">Data</Text>
