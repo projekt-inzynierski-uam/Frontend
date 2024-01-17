@@ -1,6 +1,6 @@
-import { Sidebar } from '../components/Sidebar'
+import { Sidebar } from '../components/user/dashboard/Sidebar'
 import { Outlet } from 'react-router-dom'
-import { HeaderContent } from '../components/HeaderContent'
+import { HeaderContent } from '../components/user/dashboard/HeaderContent'
 import { useDisclosure } from '@mantine/hooks'
 import { AppShell, Group, Burger } from '@mantine/core'
 
