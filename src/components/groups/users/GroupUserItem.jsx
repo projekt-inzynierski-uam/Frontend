@@ -1,4 +1,5 @@
 import { Group, Flex, Text, Button } from "@mantine/core"
+import { toast } from 'react-toastify'
 
 const GroupUserItem = ({groupId, user, permission, getData}) => {
 
@@ -9,6 +10,9 @@ const GroupUserItem = ({groupId, user, permission, getData}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({groupId: groupId, email: user.user_email}),
         })
+        if(response.status == 400){
+            toast.error('Nie można usunąć twórcy grupy')
+        }
         getData()
         }catch(err){
           console.error(err)
