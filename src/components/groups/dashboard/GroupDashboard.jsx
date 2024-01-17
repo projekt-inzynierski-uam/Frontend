@@ -11,6 +11,7 @@ const GroupDashboard = () => {
             wrap="wrap"
             w="100%"
             h="500px"
+            pl="45px"
         >
             <Flex
                     gap="3px"
@@ -30,9 +31,12 @@ const GroupDashboard = () => {
                                     <Center w="100%" h="100%"> 
                                         <Text size="50px">Panel</Text>
                                     </Center>
-                                    <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
+                                            align="center"
+                                            justify="center"
+                                            w="100%"
                                         >   
                                                 <Text size='20px'>
                                                     Administrator grupy może tu akceptować zadania oddane przez użytkowników
@@ -56,9 +60,12 @@ const GroupDashboard = () => {
                                     <Center w="100%" h="100%"> 
                                         <Text size="50px">Zadania</Text>
                                     </Center>
-                                    <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
+                                            align="center"
+                                            justify="center"
+                                            w="100%"
                                         >   
                                                 <Text size='20px'>
                                                     Administrator grupy doda tutaj zadania dla siebie lub innego członka grupy
@@ -91,9 +98,12 @@ const GroupDashboard = () => {
                                     <Center w="100%"> 
                                         <Text size="50px">Cele</Text>
                                     </Center>
-                                    <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
+                                            align="center"
+                                            justify="center"
+                                            w="100%"
                                         >   
                                                 <Text size='20px'>
                                                     Widoczne tylko dla administarora grupy cele które może 
@@ -117,9 +127,12 @@ const GroupDashboard = () => {
                                     <Center w="100%" h="100%"> 
                                         <Text size="50px">Użytkownicy</Text>
                                     </Center>
-                                    <Group ta="center" bg="#8E8D8A" w="100%" h="70px" style={{borderRadius:"10px"}}>
+                                    <Group bg="#8E8D8A" w="700px" h="70px" style={{borderRadius:"10px"}}>
                                         <Flex
                                             direction="column"
+                                            align="center"
+                                            justify="center"
+                                            w="100%"
                                         >   
                                                 <Text size='20px'>
                                                     Lista użytkowników znajdujących się w grupie
