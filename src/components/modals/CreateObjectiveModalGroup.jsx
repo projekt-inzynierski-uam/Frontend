@@ -44,14 +44,14 @@ const CreateObjectiveModalGroup = ({getData, groupId, userEmail}) => {
                     <NumberInput
                         withAsterisk
                         min={0}
-                        max={99}
+                        max={100}
                         {...form.getInputProps('min_points')}
                     />
                     <Text size="20px">Maksymalna ilość punktów</Text>
                     <NumberInput
                         withAsterisk
                         min={1}
-                        max={99}
+                        max={100}
                         {...form.getInputProps('max_points')}
                     />
                     <Button bg="#E98074" size='md' onClick={close} type="submit">Wyślij</Button>
