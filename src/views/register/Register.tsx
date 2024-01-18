@@ -52,6 +52,7 @@ export const Register = () => {
       toast.success('Konto zostało utworzone')
     } catch (error) {
       console.error(error)
+      toast.error('Użytkownik o takim mailu jest już stworzony lub hasła się nie zgadzają lub hasło jest krótsze niż 6 znaków')
     } finally {
       setIsLoading(false)
     }
